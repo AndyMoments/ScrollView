@@ -32,6 +32,10 @@ public class SplashScreen extends AppCompatActivity {
 
     public void verificacion(){
 
+        Registro registro = new Registro();
+
+        registro.leerDocumento();
+
     }
 
 }

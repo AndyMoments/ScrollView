@@ -98,7 +98,9 @@ public class Registro extends AppCompatActivity {
                                 Log.d("TAG", document.getId() + " => " + document.getData());
                                 String datos = String.valueOf(document.getData());
                                 String [] division1 = datos.split(",");
-                                Toast.makeText(com.example.scrollview.Registro.this, division1[1], Toast.LENGTH_SHORT).show();
+                                Toast.makeText(com.example.scrollview.Registro.this,division1[0], Toast.LENGTH_SHORT).show();
+                                Toast.makeText(com.example.scrollview.Registro.this,division1[1], Toast.LENGTH_SHORT).show();
+
                             }
                         } else {
                             Toast.makeText(com.example.scrollview.Registro.this, "Lectura fallida", Toast.LENGTH_SHORT).show();
