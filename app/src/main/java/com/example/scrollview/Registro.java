@@ -1,6 +1,8 @@
 package com.example.scrollview;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +23,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.prefs.PreferenceChangeEvent;
 
 public class Registro extends AppCompatActivity {
 
@@ -29,6 +32,11 @@ public class Registro extends AppCompatActivity {
     private EditText etxtUsuario;
     private EditText etxtContraseña;
     private Button btnCrearUsuario;
+
+    String nombreUsuario;
+    String password;
+    String creedenciales;
+    String datosNube;
 
     Usuario user = new Usuario();
     @Override
@@ -40,19 +48,25 @@ public class Registro extends AppCompatActivity {
         etxtContraseña = findViewById(R.id.etxt_contraseña);
         btnCrearUsuario = findViewById(R.id.btn_crear_usuario);
 
+
         btnCrearUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String nombreUsuario = etxtUsuario.getText().toString();
-                String password = etxtContraseña.getText().toString();
+                nombreUsuario = etxtUsuario.getText().toString();
+                password = etxtContraseña.getText().toString();
 
+                creedenciales = nombreUsuario + "," + password;
+
+                Toast.makeText(Registro.this, creedenciales, Toast.LENGTH_SHORT).show();
                 user.setNombreUsuario(nombreUsuario);
                 user.setContraseña(password);
 
                 //crearusuario(nombreUsuario,password);
 
-                leerDocumento();
+                //leerDocumento();
+
+                //Log.i("creed2",creedenciales);
 
             }
         });
@@ -95,11 +109,11 @@ public class Registro extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("TAG", document.getId() + " => " + document.getData());
-                                String datos = String.valueOf(document.getData());
-                                String [] division1 = datos.split(",");
-                                Toast.makeText(com.example.scrollview.Registro.this,division1[0], Toast.LENGTH_SHORT).show();
-                                Toast.makeText(com.example.scrollview.Registro.this,division1[1], Toast.LENGTH_SHORT).show();
+                                Log.d("TAG", document.getId() + " => " + document.getData().get("usuario") +
+                                        document.getData().get("contraseña"));
+
+                                datosNube = (document.getData().get("usuario")+","+(document.getData().get("contraseña")));
+
 
                             }
                         } else {
@@ -108,5 +122,41 @@ public class Registro extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    public String getCreedenciales() {
+        return creedenciales;
+    }
+
+    public void setCreedenciales(String creedenciales) {
+        this.creedenciales = creedenciales;
+    }
+
+    public String getDatosNube() {
+        return datosNube;
+    }
+
+    public void onPause(){
+
+        super.onPause();
+
+        SharedPreferences datos = PreferenceManager.getDefaultSharedPreferences(this);
+
+        SharedPreferences.Editor miEditor = datos.edit();
+
+        miEditor.putString("creedenciales",creedenciales);
+
+        miEditor.apply();
+
+    }
+
+    public void onResume(){
+
+        super.onResume();
+
+        SharedPreferences datos = PreferenceManager.getDefaultSharedPreferences(this);
+
+        creedenciales = datos.getString("creedenciales",null);
+
     }
 }
