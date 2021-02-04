@@ -15,6 +15,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    //test test
+
     private RecyclerView recyclerView;
     private List<Product> productList = new ArrayList<>( );
     private LinearLayoutManager manager;
