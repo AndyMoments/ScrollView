@@ -34,8 +34,6 @@ public class SplashScreen extends AppCompatActivity {
 
     String datosNube;
 
-    int vecesAcertadas = 0;
-
     Registro registro = new Registro();
 
     @Override
