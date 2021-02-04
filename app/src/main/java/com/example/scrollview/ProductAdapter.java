@@ -1,25 +1,23 @@
 package com.example.scrollview;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
-
 import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder>{
 
     private List<Product> productList;
     private Context context;
+    private ImageButton img_add_to_cart;
 
     public ProductAdapter(Context context, List<Product> productList) {
         this.context = context;
@@ -66,9 +64,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
             tv_name = itemView.findViewById(R.id.tv_name);
             tv_desc = itemView.findViewById(R.id.tv_desc);
             tv_price = itemView.findViewById(R.id.tv_price);
-            img_add_to_cart = itemView.findViewById(R.id.img_add_to_cart);
+            img_add_to_cart = itemView.findViewById(R.id.my_image_button);
             img_product = itemView.findViewById(R.id.img_product);
 
         }
+
     }
+
 }
