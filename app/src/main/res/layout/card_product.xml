@@ -65,7 +65,7 @@
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:layout_weight="1"/>
 
-                <ImageButton
+                <ImageView
                     android:id="@+id/my_image_button"
                     android:layout_width="@dimen/_45sdp"
                     android:layout_height="@dimen/_45sdp"

@@ -1,4 +1,4 @@
-package com.example.scrollview;
+package com.example.scrollview.model;
 
 public class Product {
 

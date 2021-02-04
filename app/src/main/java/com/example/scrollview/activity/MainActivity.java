@@ -1,4 +1,4 @@
-package com.example.scrollview;
+package com.example.scrollview.activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,9 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Toast;
+
+import com.example.scrollview.model.Product;
+import com.example.scrollview.adapter.ProductAdapter;
+import com.example.scrollview.R;
+import com.example.scrollview.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
