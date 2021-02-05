@@ -13,26 +13,27 @@
         android:layout_width="@dimen/_45sdp"
         android:layout_height="@dimen/_45sdp"
         android:padding="@dimen/_13sdp"
-        android:src="@drawable/shopping_bag"
+        android:src="@drawable/back_arrow"
         android:background="@drawable/circle_orange"
-        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginRight="@dimen/_30sdp"
         android:layout_marginLeft="30.00dp"
         app:tint="@color/white" />
 
+
     <TextView
         android:id="@+id/restaurant_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="39dp"
+        android:layout_toRightOf="@+id/img_icon"
+        android:text="McDonalds"
         android:textColor="@color/white"
-        android:textSize="@dimen/_30sdp"
-        android:text="Okay Yep "
-        android:layout_marginTop="@dimen/_20sdp"
-        android:layout_toRightOf="@+id/img_icon"/>
-
-
+        android:textSize="@dimen/_20sdp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/popular_recycler"
@@ -40,7 +41,9 @@
         android:layout_height="match_parent"
         android:layout_below="@id/restaurant_name"
         android:layout_above="@id/layout_bottoms"
-        android:layout_margin="@dimen/_10sdp"/>
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginEnd="@dimen/_10sdp" />
 
     <LinearLayout
         android:id="@+id/layout_bottoms"

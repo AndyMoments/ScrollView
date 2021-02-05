@@ -25,10 +25,17 @@ public class Activity2 extends AppCompatActivity {
 
         List<PopularFood> popularFoodList = new ArrayList<>();
 
-        popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-        popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-        popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-        popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+        popularFoodList.add(new PopularFood("Big Mac", "7.00€", R.drawable.mcdonaldsbigmac));
+        popularFoodList.add(new PopularFood("CBO", "7.75€", R.drawable.mcdonaldscbo));
+        popularFoodList.add(new PopularFood("McPollo", "7.00€", R.drawable.mcdonaldsmcpollo));
+        popularFoodList.add(new PopularFood("Cuarto de libra", "7.10€", R.drawable.mcdonaldscuartodelibra));
+        popularFoodList.add(new PopularFood("Cuarto de libra", "7.10€", R.drawable.mcdonaldscuartodelibra));
+        popularFoodList.add(new PopularFood("Cuarto de libra", "7.10€", R.drawable.mcdonaldscuartodelibra));
+        popularFoodList.add(new PopularFood("Cuarto de libra", "7.10€", R.drawable.mcdonaldscuartodelibra));
+        popularFoodList.add(new PopularFood("Cuarto de libra", "7.10€", R.drawable.mcdonaldscuartodelibra));
+        popularFoodList.add(new PopularFood("Cuarto de libra", "7.10€", R.drawable.mcdonaldscuartodelibra));
+        popularFoodList.add(new PopularFood("Cuarto de libra", "7.10€", R.drawable.mcdonaldscuartodelibra));
+
 
         setPopularRecycler(popularFoodList);
 
