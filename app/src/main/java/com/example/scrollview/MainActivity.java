@@ -56,11 +56,13 @@ public class MainActivity extends AppCompatActivity {
 
                 if (position==0){
                     Toast.makeText(MainActivity.this, "item1", Toast.LENGTH_SHORT).show();
-                    Intent intent1 = new Intent(MainActivity.this,Activity2.class);
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     startActivity(intent1);
                 }
                 else if (position==1){
                     Toast.makeText(MainActivity.this, "item2", Toast.LENGTH_SHORT).show();
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    startActivity(intent1);
                 }
                 else if (position==2){
                     Toast.makeText(MainActivity.this, "item3", Toast.LENGTH_SHORT).show();
