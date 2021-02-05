@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScrollView"
         android:usesCleartextTraffic="true">
-        <activity android:name=".model.SplashActivity"></activity>
+        <activity android:name=".activity.SplashActivity"></activity>
         <activity
             android:name=".Activity2"
             android:label="@string/title_activity_2"
