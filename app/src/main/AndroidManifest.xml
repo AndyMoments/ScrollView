@@ -13,8 +13,11 @@
         android:theme="@style/Theme.ScrollView"
         android:usesCleartextTraffic="true">
         <activity android:name=".Cesta"></activity>
-
-        <activity android:name=".Activity2">
+        <activity
+            android:name=".Activity2"
+            android:label="@string/title_activity_2"
+            android:theme="@style/Theme.ScrollView.NoActionBar"></activity>
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

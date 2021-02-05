@@ -34,6 +34,8 @@ public class SplashScreen extends AppCompatActivity {
 
     String datosNube;
 
+    String nombrePersona;
+
     Registro registro = new Registro();
 
     @Override
@@ -101,6 +103,7 @@ public class SplashScreen extends AppCompatActivity {
 
                                         if (datosNube.equals(creedenciales)) {
                                             Log.i("creed", "son iguales");
+                                            nombrePersona = document.getData().get("usuario") + "";
                                             verification=true;
                                             break;
                                         }
@@ -129,6 +132,7 @@ public class SplashScreen extends AppCompatActivity {
         if (verification==true){
             Log.d("acceso","confirmado, llevandote al menu");
             Intent intent2 = new Intent(com.example.scrollview.SplashScreen.this, MainActivity.class);
+            intent2.putExtra("nombre",nombrePersona);
             startActivity(intent2);
         }
         else{

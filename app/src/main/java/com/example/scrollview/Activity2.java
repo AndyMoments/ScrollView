@@ -34,6 +34,10 @@ public class Activity2 extends AppCompatActivity {
     private Button btnAñadirPlato;
     private Button btnIrCesta;
 
+    private TextView nombrePlato2;
+    private TextView precioPlato2;
+    private Button btnAñadirPlato2;
+
     String platoNombre;
     String platoPrecio;
 
@@ -49,6 +53,10 @@ public class Activity2 extends AppCompatActivity {
         btnAñadirPlato = findViewById(R.id.btn_añadir_plato_cesta);
         btnIrCesta = findViewById(R.id.btn_ir_cesta);
 
+        nombrePlato2 = findViewById(R.id.txt_nombre_plato2);
+        precioPlato2 = findViewById(R.id.txt_precio_plato2);
+        btnAñadirPlato2 = findViewById(R.id.btn_añadir_plato_cesta2);
+
         btnAñadirPlato.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +64,18 @@ public class Activity2 extends AppCompatActivity {
                 platoNombre = nombrePlato.getText().toString();
 
                 platoPrecio = precioPlato.getText().toString();
+
+                crearusuario(platoNombre,platoPrecio);
+
+            }
+        });
+        btnAñadirPlato2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                platoNombre = nombrePlato2.getText().toString();
+
+                platoPrecio = precioPlato2.getText().toString();
 
                 crearusuario(platoNombre,platoPrecio);
 

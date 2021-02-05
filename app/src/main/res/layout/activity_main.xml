@@ -8,6 +8,7 @@
     android:background="@color/mirage"
     tools:context=".MainActivity">
 
+
     <LinearLayout
         android:id="@+id/layout_text"
         android:layout_width="match_parent"
@@ -18,20 +19,20 @@
         android:layout_marginLeft="@dimen/_10sdp">
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bienvenido"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_30sdp" />
 
         <TextView
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bienvenidos,"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_30sdp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre De Usuario"
-            android:textColor="@color/white"
             android:layout_marginTop="-10dp"
-            android:textSize="@dimen/_30sdp"/>
+            android:textColor="@color/white"
+            android:textSize="@dimen/_30sdp" />
 
 
 

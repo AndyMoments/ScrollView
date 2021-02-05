@@ -159,4 +159,5 @@ public class Registro extends AppCompatActivity {
         creedenciales = datos.getString("creedenciales",null);
 
     }
+
 }

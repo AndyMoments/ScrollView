@@ -14,8 +14,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import java.util.ArrayList;
-
 public class Cesta extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -25,8 +23,20 @@ public class Cesta extends AppCompatActivity {
     private TextView txtPrecioprimerPlato;
     private TextView txtNombreSegundoPLato;
     private TextView txtPrecioSegundoPlato;
-    String[] nombrePlato = new String[10];
-    String[] precioPlato= new String[10];
+    private TextView txtNombretercerPLato;
+    private TextView txtPrecioTercerPlato;
+    private TextView txtNombreCuartoPLato;
+    private TextView txtPrecioCuartoPlato;
+    private TextView txtNombreQuintoPLato;
+    private TextView txtPrecioQuintoPlato;
+    private TextView txtNombreSextoPLato;
+    private TextView txtPrecioSextoPlato;
+    private TextView txtNombreSeptimoPLato;
+    private TextView txtPrecioSeptimoPlato;
+    private TextView txtNombreOctavoPLato;
+    private TextView txtPrecioOctavoPlato;
+    String[] nombrePlato = new String[8];
+    String[] precioPlato= new String[8];
     boolean campoRelleno;
     int j = 0;
 
@@ -39,6 +49,18 @@ public class Cesta extends AppCompatActivity {
         txtPrecioprimerPlato = findViewById(R.id.txt_precio_pedido1);
         txtNombreSegundoPLato = findViewById(R.id.txt_nombre_pedido2);
         txtPrecioSegundoPlato = findViewById(R.id.txt_precio_pedido2);
+        txtNombretercerPLato = findViewById(R.id.txt_nombre_pedido3);
+        txtPrecioTercerPlato = findViewById(R.id.txt_precio_pedido3);
+        txtNombreCuartoPLato = findViewById(R.id.txt_nombre_pedido4);
+        txtPrecioCuartoPlato = findViewById(R.id.txt_precio_pedido4);
+        txtNombreQuintoPLato = findViewById(R.id.txt_nombre_pedido5);
+        txtPrecioQuintoPlato = findViewById(R.id.txt_precio_pedido5);
+        txtNombreSextoPLato = findViewById(R.id.txt_nombre_pedido6);
+        txtPrecioSextoPlato = findViewById(R.id.txt_precio_pedido6);
+        txtNombreSeptimoPLato = findViewById(R.id.txt_nombre_pedido7);
+        txtPrecioSeptimoPlato = findViewById(R.id.txt_precio_pedido7);
+        txtNombreOctavoPLato = findViewById(R.id.txt_nombre_pedido8);
+        txtPrecioOctavoPlato = findViewById(R.id.txt_precio_pedido8);
 
     leerDocumento();
 
@@ -75,11 +97,40 @@ public class Cesta extends AppCompatActivity {
                                     Log.i("info", "rellena primer plato");
                                     txtNombrePrimerPLato.setText(nombrePlato[i]);
                                     txtPrecioprimerPlato.setText(precioPlato[i]);
-                                    campoRelleno = true;
                                 } else if (i == 1) {
+                                    Log.i("info", "rellena segundo plato");
                                     txtNombreSegundoPLato.setText(nombrePlato[i]);
                                     txtPrecioSegundoPlato.setText(precioPlato[i]);
-                                } else {
+                                }
+                                else if (i == 2) {
+                                    Log.i("info", "rellena tercer plato");
+                                    txtNombretercerPLato.setText(nombrePlato[i]);
+                                    txtPrecioTercerPlato.setText(precioPlato[i]);
+                                } else if (i == 3) {
+                                    Log.i("info", "rellena cuarto plato");
+                                    txtNombreCuartoPLato.setText(nombrePlato[i]);
+                                    txtPrecioCuartoPlato.setText(precioPlato[i]);
+                                }
+                                else if (i == 4) {
+                                    Log.i("info", "rellena quinto plato");
+                                    txtNombreQuintoPLato.setText(nombrePlato[i]);
+                                    txtPrecioQuintoPlato.setText(precioPlato[i]);
+                                } else if (i == 5) {
+                                    Log.i("info", "rellena sexto plato");
+                                    txtNombreSextoPLato.setText(nombrePlato[i]);
+                                    txtPrecioSextoPlato.setText(precioPlato[i]);
+                                }
+                                else if (i == 6) {
+                                    Log.i("info", "rellena septimo plato");
+                                    txtNombreSeptimoPLato.setText(nombrePlato[i]);
+                                    txtPrecioSeptimoPlato.setText(precioPlato[i]);
+                                } else if (i == 7) {
+                                    Log.i("info", "rellena octavo plato");
+                                    txtNombreOctavoPLato.setText(nombrePlato[i]);
+                                    txtPrecioOctavoPlato.setText(precioPlato[i]);
+                                }
+                                else {
+                                    Log.i("info", "No hay mas platos añadidos a la cesta");
 
                                 }
                             }
