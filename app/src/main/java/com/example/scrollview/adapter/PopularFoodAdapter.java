@@ -43,8 +43,6 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.
         holder.name.setText(popularFoodList.get(position).getName());
         holder.price.setText(popularFoodList.get(position).getPrice());
 
-
-
     }
 
     @Override
@@ -64,8 +62,6 @@ public class PopularFoodAdapter extends RecyclerView.Adapter<PopularFoodAdapter.
             foodImage = itemView.findViewById(R.id.all_menu_image);
             price = itemView.findViewById(R.id.all_menu_name);
             name = itemView.findViewById(R.id.all_menu_price);
-
-
 
         }
     }
