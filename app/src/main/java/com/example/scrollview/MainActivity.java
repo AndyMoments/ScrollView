@@ -10,8 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView nombreUsuario;
     private RecyclerView recyclerView;
-    private List<Product> productList = new ArrayList<>( );
+    private List<Restaurantes> restaurantesList = new ArrayList<>( );
     private LinearLayoutManager manager;
     private ProductAdapter productAdapter;
 
@@ -106,18 +104,18 @@ public class MainActivity extends AppCompatActivity {
 
     private void setProductAdapter() {
 
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        productList.add(new Product("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
 
-        productAdapter = new ProductAdapter(MainActivity.this, productList);
+        productAdapter = new ProductAdapter(MainActivity.this, restaurantesList);
         recyclerView.setAdapter(productAdapter);
         manager = new LinearLayoutManager(MainActivity.this);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);

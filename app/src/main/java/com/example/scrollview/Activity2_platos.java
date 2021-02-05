@@ -41,7 +41,9 @@ public class Activity2_platos extends AppCompatActivity {
 
         imgbtn = findViewById(R.id.img_btn);
 
+        int productosAñadidos = 0;
 
+        Pedidos pedidos = new Pedidos();
 
         List<PopularFood> popularFoodList = new ArrayList<>();
 
