@@ -34,6 +34,12 @@ public class Activity2_platos extends AppCompatActivity {
 
     private ImageButton imgbtn;
 
+    int productosAñadidos = 0;
+
+
+    private ArrayList<Pedidos> arrayPedidos = new ArrayList<>(); //array donde se almacenaran los datos de los pedidos que se añaden a la cesta
+
+    List<PopularFood> popularFoodList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedIstanceState) {
         super.onCreate(savedIstanceState);
@@ -41,32 +47,64 @@ public class Activity2_platos extends AppCompatActivity {
 
         imgbtn = findViewById(R.id.img_btn);
 
-        int productosAñadidos = 0;
-
-        Pedidos pedidos = new Pedidos();
-
-        List<PopularFood> popularFoodList = new ArrayList<>();
-
         popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-        popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-        popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-        popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+        popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+        popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+        popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
 
         setPopularRecycler(popularFoodList);
 
         popularRecycler.addOnItemTouchListener(new RecyclerItemClickListener(this, popularRecycler ,new RecyclerItemClickListener.OnItemClickListener() {
             @Override public void onItemClick(View view, int position) {
 
-                if(position==0){
+                Pedidos pedidos = new Pedidos();//creamos el objeto para cada vez que se haga click
 
+                String nombre;
+                String precio;
+                if(position==0){
+                    
+                    nombre = (popularFoodList.get(position).getName());
+                    pedidos.setName(nombre);
+                    precio = (popularFoodList.get(position).getPrice());
+                    pedidos.setPrecio(precio);
+
+                    Log.i("pedido",popularFoodList.get(position).getName());
+                    Log.i("pedido",popularFoodList.get(position).getPrice());
+                    Toast.makeText(Activity2_platos.this, "pedido añadido", Toast.LENGTH_SHORT).show();
+
+                }
+                else if(position==1){
+
+                    pedidos.setName(popularFoodList.get(position).getName());
+                    pedidos.setPrecio(popularFoodList.get(position).getPrice());
+                    Toast.makeText(Activity2_platos.this, "pedido añadido", Toast.LENGTH_SHORT).show();
 
 
                 }
+                else if(position==2){
+
+                    pedidos.setName(popularFoodList.get(position).getName());
+                    pedidos.setPrecio(popularFoodList.get(position).getPrice());
+                    Toast.makeText(Activity2_platos.this, "pedido añadido", Toast.LENGTH_SHORT).show();
+
+
+                }
+                else{
+
+                    pedidos.setName(popularFoodList.get(position).getName());
+                    pedidos.setPrecio(popularFoodList.get(position).getPrice());
+                    Toast.makeText(Activity2_platos.this, "pedido añadido", Toast.LENGTH_SHORT).show();
+
+                }
+
+                productosAñadidos++; //contador de cuantos pedidos se han añadido a la cesta
+
+                arrayPedidos.add(pedidos); //guardamos en el array los pedidos que se soliciten
+
+                Log.i("pedidosarray", String.valueOf(arrayPedidos));
 
             }
             @Override public void onLongItemClick(View view, int position) {
-
-
 
             }
         }));
@@ -74,8 +112,14 @@ public class Activity2_platos extends AppCompatActivity {
         imgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Activity2_platos.this,Cesta.class);
-                startActivity(intent);
+
+                Log.i("pedidosarray",arrayPedidos.toString() + " " + productosAñadidos);
+
+                Intent cesta = new Intent(Activity2_platos.this,Cesta.class);
+
+                cesta.putExtra("arrayPedidos",arrayPedidos);
+
+                startActivity(cesta);
             }
         });
 
@@ -90,42 +134,5 @@ public class Activity2_platos extends AppCompatActivity {
         popularRecycler.setAdapter(popularFoodAdapter);
 
     }
-
-
-
-
-    public void crearPedido (String nombrePlato2, String precioPlato2){
-
-        // Create a new user with a first and last name
-        Map<String, Object> user = new HashMap<>();
-        user.put("nombre", nombrePlato2);
-        user.put("precio", precioPlato2);
-
-// Add a new document with a generated ID
-        db.collection("cesta")
-                .add(user)
-                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                    @Override
-                    public void onSuccess(DocumentReference documentReference) {
-                        Toast.makeText(Activity2_platos.this, "Registro completado", Toast.LENGTH_SHORT).show();
-                        Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Activity2_platos.this, "Registro fallido", Toast.LENGTH_SHORT).show();
-
-                        Log.w("TAG", "Error adding document", e);
-                    }
-                });
-
-    }
-
-
-
-
-
 
 }

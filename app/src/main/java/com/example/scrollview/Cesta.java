@@ -14,6 +14,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+
 public class Cesta extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -35,10 +37,11 @@ public class Cesta extends AppCompatActivity {
     private TextView txtPrecioSeptimoPlato;
     private TextView txtNombreOctavoPLato;
     private TextView txtPrecioOctavoPlato;
-    String[] nombrePlato = new String[8];
-    String[] precioPlato= new String[8];
-    boolean campoRelleno;
     int j = 0;
+    int contador = 0;
+
+    ArrayList<String> nombrePedidos = new ArrayList<>();
+    ArrayList<String> precioPedidos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,81 +65,76 @@ public class Cesta extends AppCompatActivity {
         txtNombreOctavoPLato = findViewById(R.id.txt_nombre_pedido8);
         txtPrecioOctavoPlato = findViewById(R.id.txt_precio_pedido8);
 
-    leerDocumento();
+        Bundle extras = getIntent().getExtras();
 
-    }
-    public void leerDocumento (){
-        db.collection("cesta")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                Log.d("TAG", document.getId() + " => " + document.getData().get("nombre") +
-                                        document.getData().get("precio"));
+        ArrayList<Pedidos> aux;
+        if (extras != null) {
 
-                                nombrePlato[j] = (document.getData().get("nombre") + "");
-                                precioPlato[j] = (document.getData().get("precio") + "");
-                                Log.d("plato",nombrePlato[j]);
-                                Log.d("plato",precioPlato[j]);
+            aux = (ArrayList<Pedidos>) extras.get("arrayPedidos");
 
-                                j++;
-                            }
-                        } else {
-                            Toast.makeText(Cesta.this, "Lectura fallida", Toast.LENGTH_SHORT).show();
-                            Log.w("TAG", "Error getting documents.", task.getException());
-                        }
-                        Log.d("tamaño", String.valueOf(nombrePlato.length));
-                        for (int i = 0; i<nombrePlato.length;i++){
+            for (Pedidos objeto : aux) {
 
-                            if(nombrePlato[i]!=null) {
+                nombrePedidos.add(objeto.getName());
+                precioPedidos.add(objeto.getPrecio());
 
+                contador++;
 
-                                if (i == 0) {
-                                    Log.i("info", "rellena primer plato");
-                                    txtNombrePrimerPLato.setText(nombrePlato[i]);
-                                    txtPrecioprimerPlato.setText(precioPlato[i]);
-                                } else if (i == 1) {
-                                    Log.i("info", "rellena segundo plato");
-                                    txtNombreSegundoPLato.setText(nombrePlato[i]);
-                                    txtPrecioSegundoPlato.setText(precioPlato[i]);
-                                }
-                                else if (i == 2) {
-                                    Log.i("info", "rellena tercer plato");
-                                    txtNombretercerPLato.setText(nombrePlato[i]);
-                                    txtPrecioTercerPlato.setText(precioPlato[i]);
-                                } else if (i == 3) {
-                                    Log.i("info", "rellena cuarto plato");
-                                    txtNombreCuartoPLato.setText(nombrePlato[i]);
-                                    txtPrecioCuartoPlato.setText(precioPlato[i]);
-                                }
-                                else if (i == 4) {
-                                    Log.i("info", "rellena quinto plato");
-                                    txtNombreQuintoPLato.setText(nombrePlato[i]);
-                                    txtPrecioQuintoPlato.setText(precioPlato[i]);
-                                } else if (i == 5) {
-                                    Log.i("info", "rellena sexto plato");
-                                    txtNombreSextoPLato.setText(nombrePlato[i]);
-                                    txtPrecioSextoPlato.setText(precioPlato[i]);
-                                }
-                                else if (i == 6) {
-                                    Log.i("info", "rellena septimo plato");
-                                    txtNombreSeptimoPLato.setText(nombrePlato[i]);
-                                    txtPrecioSeptimoPlato.setText(precioPlato[i]);
-                                } else if (i == 7) {
-                                    Log.i("info", "rellena octavo plato");
-                                    txtNombreOctavoPLato.setText(nombrePlato[i]);
-                                    txtPrecioOctavoPlato.setText(precioPlato[i]);
-                                }
-                                else {
-                                    Log.i("info", "No hay mas platos añadidos a la cesta");
+            }
 
-                                }
-                            }
-                        }
+        }
 
-                    }
-                });
+        for (int i = 0;i<contador;i++){
+
+            if (i==0){
+
+                txtNombrePrimerPLato.setText(nombrePedidos.get(i));
+                txtPrecioprimerPlato.setText(precioPedidos.get(i));
+
+            }
+            else if(i==1){
+
+                txtNombreSegundoPLato.setText(nombrePedidos.get(i));
+                txtPrecioSegundoPlato.setText(precioPedidos.get(i));
+
+            }
+            else if(i==2){
+
+                txtNombretercerPLato.setText(nombrePedidos.get(i));
+                txtPrecioTercerPlato.setText(precioPedidos.get(i));
+
+            }
+            else if(i==3){
+
+                txtNombreCuartoPLato.setText(nombrePedidos.get(i));
+                txtPrecioCuartoPlato.setText(precioPedidos.get(i));
+
+            }
+            else if(i==4){
+
+                txtNombreQuintoPLato.setText(nombrePedidos.get(i));
+                txtPrecioQuintoPlato.setText(precioPedidos.get(i));
+
+            }
+            else if(i==5){
+
+                txtNombreSextoPLato.setText(nombrePedidos.get(i));
+                txtPrecioSextoPlato.setText(precioPedidos.get(i));
+
+            }
+            else if(i==6){
+
+                txtNombreSeptimoPLato.setText(nombrePedidos.get(i));
+                txtPrecioSeptimoPlato.setText(precioPedidos.get(i));
+
+            }
+            else if(i==7){
+
+                txtNombreOctavoPLato.setText(nombrePedidos.get(i));
+                txtPrecioOctavoPlato.setText(precioPedidos.get(i));
+
+            }
+
+        }
+
     }
 }
