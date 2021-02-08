@@ -23,11 +23,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Restaurantes> restaurantesList = new ArrayList<>( );
     private LinearLayoutManager manager;
     private ProductAdapter productAdapter;
-
-    String nombre;
-
-    Usuario usuario = new Usuario();
-
+    private String nombre;
+    private int restauranteElegido = 0;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,56 +36,85 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerView);
         nombreUsuario = findViewById(R.id.userName);
 
-        //nombre de bienvenido del usuario que me lo pasa la pagina de carga
+        //nombre de bienvenido del usuario que me lo pasa la pagina de validacion
 
         Intent intent = getIntent();
-
         nombre = intent.getStringExtra("nombre");
-
         nombreUsuario.setText(nombre);
 
+
         setProductAdapter();
+
+        //metodo para saber a que restaurante le estas dando click
 
         recyclerView.addOnItemTouchListener( new RecyclerItemClickListener(this, recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
             @Override public void onItemClick(View view, int position) {
 
+                //Cada uno de los restaurantes ( lo que se ve en la app)
+
                 if (position==0){
-                    Toast.makeText(MainActivity.this, "item1", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 1;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
                     startActivity(intent1);
+
                 }
                 else if (position==1){
-                    Toast.makeText(MainActivity.this, "item2", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 2;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
                     startActivity(intent1);
                 }
                 else if (position==2){
-                    Toast.makeText(MainActivity.this, "item3", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 3;
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
+                    startActivity(intent1);
                 }
                 else if (position==3){
-                    Toast.makeText(MainActivity.this, "item4", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 4;
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
+                    startActivity(intent1);
                 }
                 else if (position==4){
-                    Toast.makeText(MainActivity.this, "item5", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 5;
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
+                    startActivity(intent1);
                 }
                 else if (position==5){
-                    Toast.makeText(MainActivity.this, "item6", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 6;
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
+                    startActivity(intent1);
                 }
                 else if (position==6){
-                    Toast.makeText(MainActivity.this, "item7", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 7;
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
+                    startActivity(intent1);
                 }
                 else if (position==7){
-                    Toast.makeText(MainActivity.this, "item8", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 8;
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
+                    startActivity(intent1);
                 }
                 else if (position==8){
-                    Toast.makeText(MainActivity.this, "item8", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 9;
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
+                    startActivity(intent1);
                 }
                 else if (position==9){
-                    Toast.makeText(MainActivity.this, "item9", Toast.LENGTH_SHORT).show();
+                    restauranteElegido = 10;
+                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+                    intent1.putExtra("restauranteElegido",restauranteElegido);
+                    startActivity(intent1);
+
                 }
-                else if (position==10){
-                    Toast.makeText(MainActivity.this, "item10", Toast.LENGTH_SHORT).show();
-                }
+
 
             }
 
@@ -101,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    //la información que tiene cada restaurante
     private void setProductAdapter() {
 
         restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
@@ -120,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
         manager = new LinearLayoutManager(MainActivity.this);
         manager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(manager );
-        Log.d("layout", String.valueOf(recyclerView.getAdapter().getItemId(2)));
 
 
 

@@ -1,6 +1,8 @@
 package com.example.scrollview;
 
-public class Pedidos {
+import java.io.Serializable;
+
+public class Pedidos implements Serializable {
 
     private String name;
     private String precio;
@@ -23,6 +25,11 @@ public class Pedidos {
 
     public void setPrecio(String precio) {
         this.precio = precio;
+    }
+
+    public void guardar(){
+        name = name;
+        precio = precio;
     }
 
     @Override

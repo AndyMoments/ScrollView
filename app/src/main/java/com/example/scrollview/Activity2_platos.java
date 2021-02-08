@@ -27,15 +27,11 @@ import java.util.Map;
 
 public class Activity2_platos extends AppCompatActivity {
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-
     RecyclerView popularRecycler;
     PopularFoodAdapter popularFoodAdapter;
-
     private ImageButton imgbtn;
-
-    int productosAñadidos = 0;
-
+    private int restaurantElegido = 0;
+    private int productosAñadidos = 0;
 
     private ArrayList<Pedidos> arrayPedidos = new ArrayList<>(); //array donde se almacenaran los datos de los pedidos que se añaden a la cesta
 
@@ -47,11 +43,76 @@ public class Activity2_platos extends AppCompatActivity {
 
         imgbtn = findViewById(R.id.img_btn);
 
-        popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-        popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-        popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-        popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        //recuperamos el int que devuelve la pagina anterior para saber que restaurante has elegido
 
+        Intent intent = getIntent();
+        restaurantElegido = intent.getIntExtra("restauranteElegido",0);
+
+        //los distintos platos de cada restaurante
+
+        if(restaurantElegido==1) {
+            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else if(restaurantElegido==2) {
+            popularFoodList.add(new PopularFood("Big Mac2", "2.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else if(restaurantElegido==3) {
+            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else if(restaurantElegido==4) {
+            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else if(restaurantElegido==5) {
+            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else if(restaurantElegido==6) {
+            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else if(restaurantElegido==7) {
+            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else if(restaurantElegido==8) {
+            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else if(restaurantElegido==9) {
+            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else if(restaurantElegido==10) {
+            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+        }
+        else{
+            Log.i("fallo","ha puesto el default");
+        }
         setPopularRecycler(popularFoodList);
 
         popularRecycler.addOnItemTouchListener(new RecyclerItemClickListener(this, popularRecycler ,new RecyclerItemClickListener.OnItemClickListener() {
@@ -62,7 +123,7 @@ public class Activity2_platos extends AppCompatActivity {
                 String nombre;
                 String precio;
                 if(position==0){
-                    
+
                     nombre = (popularFoodList.get(position).getName());
                     pedidos.setName(nombre);
                     precio = (popularFoodList.get(position).getPrice());

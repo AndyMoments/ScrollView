@@ -18,9 +18,6 @@ import java.util.ArrayList;
 
 public class Cesta extends AppCompatActivity {
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-
     private TextView txtNombrePrimerPLato;
     private TextView txtPrecioprimerPlato;
     private TextView txtNombreSegundoPLato;
