@@ -1,7 +1,6 @@
 package com.example.scrollview;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +17,12 @@ import java.util.List;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder>{
 
-    private List<Product> productList;
+    private List<Restaurantes> restaurantesList;
     private Context context;
 
-    public ProductAdapter(Context context, List<Product> productList) {
+    public ProductAdapter(Context context, List<Restaurantes> restaurantesList) {
         this.context = context;
-        this.productList = productList;
+        this.restaurantesList = restaurantesList;
     }
 
     @NonNull
@@ -37,21 +36,21 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
 
-        Product product = productList.get(position);
+        Restaurantes restaurantes = restaurantesList.get(position);
         Glide.with(context)
-                .load(product.getImage())
+                .load(restaurantes.getImage())
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(holder.img_product);
 
-        holder.tv_name.setText(product.getName());
-        holder.tv_desc.setText(product.getDesc());
-        holder.tv_price.setText(product.getPrice());
+        holder.tv_name.setText(restaurantes.getName());
+        holder.tv_desc.setText(restaurantes.getDesc());
+        holder.tv_price.setText(restaurantes.getPrice());
 
     }
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        return restaurantesList.size();
     }
 
     public static class ProductViewHolder extends RecyclerView.ViewHolder

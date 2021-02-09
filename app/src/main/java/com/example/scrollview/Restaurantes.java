@@ -1,10 +1,10 @@
 package com.example.scrollview;
 
-public class Product {
+public class Restaurantes {
 
     String name, desc, price, image;
 
-    public Product(String name, String desc, String price, String image) {
+    public Restaurantes(String name, String desc, String price, String image) {
         this.name = name;
         this.desc = desc;
         this.price = price;
