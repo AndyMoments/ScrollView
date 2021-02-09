@@ -14,7 +14,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".Cesta"></activity>
         <activity android:name=".Activity2_platos"></activity>
-        <activity android:name=".SplashScreen">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registro" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".SplashScreen" />
     </application>
 
 </manifest>

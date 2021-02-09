@@ -51,64 +51,64 @@ public class Activity2_platos extends AppCompatActivity {
         //los distintos platos de cada restaurante
 
         if(restaurantElegido==1) {
-            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big Mac", "4,30 €", R.drawable.bigmac));
+            popularFoodList.add(new PopularFood("Cuarto de Libra", "4,40 €", R.drawable.cuartodelibra));
+            popularFoodList.add(new PopularFood("Hamburguesa con Queso", "1,30 €", R.drawable.hamburguesaqueso));
+            popularFoodList.add(new PopularFood("Filete de Pescado", "4,40 €", R.drawable.filetepescado));
         }
         else if(restaurantElegido==2) {
-            popularFoodList.add(new PopularFood("Big Mac2", "2.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Whooper", "5,35 €", R.drawable.whopper));
+            popularFoodList.add(new PopularFood("The King Huevo", "7,90 €", R.drawable.whopper));
+            popularFoodList.add(new PopularFood("Big King", "6,60 €", R.drawable.whopper));
+            popularFoodList.add(new PopularFood("Steakhouse", "6,95 €", R.drawable.whopper));
         }
         else if(restaurantElegido==3) {
-            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Quesarito", "5,00 €", R.drawable.quesarito));
+            popularFoodList.add(new PopularFood("Chicken Burrito", "5,00 €", R.drawable.quesarito));
+            popularFoodList.add(new PopularFood("Burrito Supreme", "3,90 €", R.drawable.quesarito));
+            popularFoodList.add(new PopularFood("Burrito GSB", "5,00 €", R.drawable.quesarito));
         }
         else if(restaurantElegido==4) {
-            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Bucket Mix", "9,49 €", R.drawable.cubokfc));
+            popularFoodList.add(new PopularFood("Menú 5 tiras", "8,99 €", R.drawable.cubokfc));
+            popularFoodList.add(new PopularFood("Menú 3 piezas", "8,99 €", R.drawable.cubokfc));
+            popularFoodList.add(new PopularFood("Menú 8 alitas", "8,99 €", R.drawable.cubokfc));
         }
         else if(restaurantElegido==5) {
-            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Bocadillo British Bacon", "5,80 €", R.drawable.pansbocata));
+            popularFoodList.add(new PopularFood("Bocadillo Serrano Brie", "6,70 €", R.drawable.pansbocata));
+            popularFoodList.add(new PopularFood("Bocadillo Vegetal de Atún", "6,95 €", R.drawable.pansbocata));
+            popularFoodList.add(new PopularFood("Bocadillo Pechuga de Polloe", "6,80 €", R.drawable.pansbocata));
         }
         else if(restaurantElegido==6) {
-            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Hamburguesa VIPS Burger", "12,50 €", R.drawable.vipsburger));
+            popularFoodList.add(new PopularFood("Hamburguesa Pampera", "12,50 €", R.drawable.vipsburger));
+            popularFoodList.add(new PopularFood("Hamburguesa Big Tower", "12,25 €", R.drawable.vipsburger));
+            popularFoodList.add(new PopularFood("Aguacate Chicken Burger", "12,25 €", R.drawable.vipsburger));
         }
         else if(restaurantElegido==7) {
-            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Big Mac", "12,50 €", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Chicken", "12,50 €", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Cheese burguer", "5,35 €", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Aguacate Chicken Burger", "5,35 €", R.drawable.mcdonalds));
         }
         else if(restaurantElegido==8) {
-            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Pizza Barbacoa", "3,90 €", R.drawable.pizza));
+            popularFoodList.add(new PopularFood("Pizza Americana", "3,90 €", R.drawable.pizza));
+            popularFoodList.add(new PopularFood("Cheese burguer", "3,90 €", R.drawable.pizza));
+            popularFoodList.add(new PopularFood("Big mag grande", "3,90 €", R.drawable.pizza));
         }
         else if(restaurantElegido==9) {
-            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Fettuccine Pirata\n", "13,50 €", R.drawable.pastaginos));
+            popularFoodList.add(new PopularFood("Rigatoni al Forno", "12,95 €", R.drawable.pastaginos));
+            popularFoodList.add(new PopularFood("Spaghetti Bolognesa", "11,95 €", R.drawable.pastaginos));
+            popularFoodList.add(new PopularFood("Spaghetti al Frutti di Mare", "14,50 €", R.drawable.pastaginos));
         }
         else if(restaurantElegido==10) {
-            popularFoodList.add(new PopularFood("Big Mac", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Chicken", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Cheese burguer", "1.99$", R.drawable.mcdonalds));
-            popularFoodList.add(new PopularFood("Big mag grande", "1.99$", R.drawable.mcdonalds));
+            popularFoodList.add(new PopularFood("Hamburger", "9,95 €", R.drawable.hardrockburger));
+            popularFoodList.add(new PopularFood("Cheeseburger", "9,95 €", R.drawable.hardrockburger));
+            popularFoodList.add(new PopularFood("Rwb Burger", "9,95 €", R.drawable.hardrockburger));
+            popularFoodList.add(new PopularFood("All American Burger", "9,95 €", R.drawable.hardrockburger));
         }
         else{
             Log.i("fallo","ha puesto el default");

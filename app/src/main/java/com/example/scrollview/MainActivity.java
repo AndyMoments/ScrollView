@@ -130,16 +130,16 @@ public class MainActivity extends AppCompatActivity {
     //la información que tiene cada restaurante
     private void setProductAdapter() {
 
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
-        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "1.99€" , "https://logos-world.net/wp-content/uploads/2020/04/McDonalds-Logo.png"));
+        restaurantesList.add(new Restaurantes("McDonalds", "Americana" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/32834.gif"));
+        restaurantesList.add(new Restaurantes("Burger King", "Americana" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/29468.gif"));
+        restaurantesList.add(new Restaurantes("Taco Bell", "Americana, Tex-Mex" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/39052.gif"));
+        restaurantesList.add(new Restaurantes("KFC", "Pollo, Americana" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/24584.gif"));
+        restaurantesList.add(new Restaurantes("Pans&Company", "Sandwiches, bocadillos" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/29855.gif"));
+        restaurantesList.add(new Restaurantes("VIPS", "Americana" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/17292.gif"));
+        restaurantesList.add(new Restaurantes("Foster's Hollywood", "Americana" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/42568.gif"));
+        restaurantesList.add(new Restaurantes("Pomodoro", "Pizza, Hamburguesas" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/45584.gif"));
+        restaurantesList.add(new Restaurantes("Ginos", "Italiana, Pizza" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/18141.gif"));
+        restaurantesList.add(new Restaurantes("Hard Rock Café", "Americana" , "Envío 1.99€" , "https://d2egcvq7li5bpq.cloudfront.net/es/images/restaurants/40880.gif"));
 
         productAdapter = new ProductAdapter(MainActivity.this, restaurantesList);
         recyclerView.setAdapter(productAdapter);

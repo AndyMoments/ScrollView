@@ -3,6 +3,7 @@ package com.example.scrollview;
 public class Restaurantes {
 
     String name, desc, price, image;
+    Integer imageUrl;
 
     public Restaurantes(String name, String desc, String price, String image) {
         this.name = name;
