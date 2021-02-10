@@ -99,11 +99,14 @@
             android:layout_height="@dimen/_20sdp"
             android:src="@drawable/heart"
             android:layout_weight="1"/>
+
         <ImageView
+            android:id="@+id/cesta"
             android:layout_width="0dp"
             android:layout_height="@dimen/_20sdp"
-            android:src="@drawable/shopping_bag"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:clickable="true"
+            android:src="@drawable/shopping_bag" />
         <ImageView
             android:layout_width="0dp"
             android:layout_height="@dimen/_20sdp"

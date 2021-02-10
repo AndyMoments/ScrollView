@@ -38,7 +38,7 @@ public class Cesta extends AppCompatActivity {
     int contador = 0;
 
     ArrayList<String> nombrePedidos = new ArrayList<>();
-    ArrayList<String> precioPedidos = new ArrayList<>();
+    ArrayList<Double> precioPedidos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,52 +82,53 @@ public class Cesta extends AppCompatActivity {
 
         for (int i = 0;i<contador;i++){
 
+
             if (i==0){
 
                 txtNombrePrimerPLato.setText(nombrePedidos.get(i));
-                txtPrecioprimerPlato.setText(precioPedidos.get(i));
+                txtPrecioprimerPlato.setText(precioPedidos.get(i) + " €");
 
             }
             else if(i==1){
 
                 txtNombreSegundoPLato.setText(nombrePedidos.get(i));
-                txtPrecioSegundoPlato.setText(precioPedidos.get(i));
+                txtPrecioSegundoPlato.setText(precioPedidos.get(i) + " €");
 
             }
             else if(i==2){
 
                 txtNombretercerPLato.setText(nombrePedidos.get(i));
-                txtPrecioTercerPlato.setText(precioPedidos.get(i));
+                txtPrecioTercerPlato.setText(precioPedidos.get(i) + " €");
 
             }
             else if(i==3){
 
                 txtNombreCuartoPLato.setText(nombrePedidos.get(i));
-                txtPrecioCuartoPlato.setText(precioPedidos.get(i));
+                txtPrecioCuartoPlato.setText(precioPedidos.get(i) + " €");
 
             }
             else if(i==4){
 
                 txtNombreQuintoPLato.setText(nombrePedidos.get(i));
-                txtPrecioQuintoPlato.setText(precioPedidos.get(i));
+                txtPrecioQuintoPlato.setText(precioPedidos.get(i) + " €");
 
             }
             else if(i==5){
 
                 txtNombreSextoPLato.setText(nombrePedidos.get(i));
-                txtPrecioSextoPlato.setText(precioPedidos.get(i));
+                txtPrecioSextoPlato.setText(precioPedidos.get(i) + " €");
 
             }
             else if(i==6){
 
                 txtNombreSeptimoPLato.setText(nombrePedidos.get(i));
-                txtPrecioSeptimoPlato.setText(precioPedidos.get(i));
+                txtPrecioSeptimoPlato.setText(precioPedidos.get(i) + " €");
 
             }
             else if(i==7){
 
                 txtNombreOctavoPLato.setText(nombrePedidos.get(i));
-                txtPrecioOctavoPlato.setText(precioPedidos.get(i));
+                txtPrecioOctavoPlato.setText(precioPedidos.get(i) + " €");
 
             }
 

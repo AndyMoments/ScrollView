@@ -10,12 +10,28 @@
     android:layout_marginRight="8dp"
     android:background="@drawable/rectangle_stroke">
 
+    <TextView
+        android:id="@+id/txt_Cantidad_row_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Cantidad : 0"
+        android:textColor="#FFFDFD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/all_menu_image"
+        app:layout_constraintTop_toBottomOf="@+id/all_menu_price" />
+
 
     <ImageView
         android:id="@+id/all_menu_image"
-        android:layout_width="86dp"
+        android:layout_width="0dp"
         android:layout_height="95dp"
+        android:layout_marginEnd="230dp"
+        android:layout_marginRight="230dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/txt_Cantidad_row_item"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/mcdonalds" />
@@ -27,11 +43,11 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="4dp"
         android:text="166"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/txt_Cantidad_row_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />

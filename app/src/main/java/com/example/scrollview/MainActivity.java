@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     private ProductAdapter productAdapter;
     private String nombre;
     private int restauranteElegido = 0;
+    private ImageView cesta;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         nombreUsuario = findViewById(R.id.userName);
+        cesta = findViewById(R.id.cesta);
 
         //nombre de bienvenido del usuario que me lo pasa la pagina de validacion
 
@@ -42,8 +45,16 @@ public class MainActivity extends AppCompatActivity {
         nombre = intent.getStringExtra("nombre");
         nombreUsuario.setText(nombre);
 
-
         setProductAdapter();
+
+        //click en la cesta
+        cesta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(MainActivity.this,Cesta.class);
+                startActivity(intent2);
+            }
+        });
 
         //metodo para saber a que restaurante le estas dando click
 
@@ -125,7 +136,11 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
+
+
     }
+
+
 
     //la información que tiene cada restaurante
     private void setProductAdapter() {
@@ -150,5 +165,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
 }

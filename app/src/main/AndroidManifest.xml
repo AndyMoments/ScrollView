@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ScrollView"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Cesta"></activity>
-        <activity android:name=".Activity2_platos"></activity>
+        <activity android:name=".AlertDialog"></activity>
+        <activity android:name=".Cesta" />
+        <activity android:name=".Activity2_platos" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Pedidos implements Serializable {
 
     private String name;
-    private String precio;
+    private double precio;
 
     public Pedidos(){
 
@@ -19,11 +19,11 @@ public class Pedidos implements Serializable {
         this.name = name;
     }
 
-    public String getPrecio() {
+    public double getPrecio() {
         return precio;
     }
 
-    public void setPrecio(String precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 

@@ -99,8 +99,6 @@ public class SplashScreen extends AppCompatActivity {
                                      datosNube = document.getData().get("usuario") + "," + document.getData().get("contraseña");
                                     Log.d("datosnube", datosNube);
 
-                                    Log.i("creed", creedenciales);
-
                                         if (datosNube.equals(creedenciales)) {
                                             Log.i("creed", "son iguales");
                                             nombrePersona = document.getData().get("usuario") + "";

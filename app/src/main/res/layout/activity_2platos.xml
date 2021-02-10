@@ -58,8 +58,8 @@
             android:src="@drawable/heart"
             android:layout_weight="1"/>
 
-        <ImageButton
-            android:id="@+id/img_btn"
+        <ImageView
+            android:id="@+id/cesta"
             android:layout_width="0dp"
             android:layout_height="@dimen/_20sdp"
             android:layout_weight="1"

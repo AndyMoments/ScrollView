@@ -1,13 +1,18 @@
 package com.example.scrollview;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,6 +25,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,11 +33,14 @@ import java.util.Map;
 
 public class Activity2_platos extends AppCompatActivity {
 
+    AlertDialog.Builder builder;
     RecyclerView popularRecycler;
     PopularFoodAdapter popularFoodAdapter;
-    private ImageButton imgbtn;
+    private ImageView imgbtn;
     private int restaurantElegido = 0;
     private int productosAñadidos = 0;
+    private String numeroCantidad = " ";
+    private TextView txtcantidad;
 
     private ArrayList<Pedidos> arrayPedidos = new ArrayList<>(); //array donde se almacenaran los datos de los pedidos que se añaden a la cesta
 
@@ -41,7 +50,8 @@ public class Activity2_platos extends AppCompatActivity {
         super.onCreate(savedIstanceState);
         setContentView(R.layout.activity_2platos);
 
-        imgbtn = findViewById(R.id.img_btn);
+        imgbtn = findViewById(R.id.cesta);
+        txtcantidad = findViewById(R.id.txt_Cantidad_row_item);
 
         //recuperamos el int que devuelve la pagina anterior para saber que restaurante has elegido
 
@@ -115,46 +125,31 @@ public class Activity2_platos extends AppCompatActivity {
         }
         setPopularRecycler(popularFoodList);
 
+        builder = new AlertDialog.Builder(this);
+
         popularRecycler.addOnItemTouchListener(new RecyclerItemClickListener(this, popularRecycler ,new RecyclerItemClickListener.OnItemClickListener() {
             @Override public void onItemClick(View view, int position) {
 
                 Pedidos pedidos = new Pedidos();//creamos el objeto para cada vez que se haga click
 
-                String nombre;
-                String precio;
                 if(position==0){
 
-                    nombre = (popularFoodList.get(position).getName());
-                    pedidos.setName(nombre);
-                    precio = (popularFoodList.get(position).getPrice());
-                    pedidos.setPrecio(precio);
-
-                    Log.i("pedido",popularFoodList.get(position).getName());
-                    Log.i("pedido",popularFoodList.get(position).getPrice());
-                    Toast.makeText(Activity2_platos.this, "pedido añadido", Toast.LENGTH_SHORT).show();
+                    configurarAlertDialog(builder,pedidos,position);
 
                 }
                 else if(position==1){
 
-                    pedidos.setName(popularFoodList.get(position).getName());
-                    pedidos.setPrecio(popularFoodList.get(position).getPrice());
-                    Toast.makeText(Activity2_platos.this, "pedido añadido", Toast.LENGTH_SHORT).show();
-
+                    configurarAlertDialog(builder,pedidos,position);
 
                 }
                 else if(position==2){
 
-                    pedidos.setName(popularFoodList.get(position).getName());
-                    pedidos.setPrecio(popularFoodList.get(position).getPrice());
-                    Toast.makeText(Activity2_platos.this, "pedido añadido", Toast.LENGTH_SHORT).show();
-
+                    configurarAlertDialog(builder,pedidos,position);
 
                 }
                 else{
 
-                    pedidos.setName(popularFoodList.get(position).getName());
-                    pedidos.setPrecio(popularFoodList.get(position).getPrice());
-                    Toast.makeText(Activity2_platos.this, "pedido añadido", Toast.LENGTH_SHORT).show();
+                    configurarAlertDialog(builder,pedidos,position);
 
                 }
 
@@ -170,6 +165,9 @@ public class Activity2_platos extends AppCompatActivity {
             }
         }));
 
+
+
+        //ir a la cesta
         imgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -186,6 +184,7 @@ public class Activity2_platos extends AppCompatActivity {
 
     }
 
+    //creacion de los reciclerView y sus adaptadores
     private  void setPopularRecycler(List<PopularFood> popularFoodList) {
 
         popularRecycler = findViewById(R.id.popular_recycler);
@@ -196,4 +195,68 @@ public class Activity2_platos extends AppCompatActivity {
 
     }
 
+    //cnfigurar el alertDialog
+    public void configurarAlertDialog(AlertDialog.Builder builder,Pedidos pedidos,int position){
+
+        final View view = getLayoutInflater().inflate(R.layout.activity_alert_dialog,null);
+
+        AlertDialog alertDialog = new AlertDialog.Builder(this).create();
+
+        builder.setCancelable(false);
+
+        final EditText editText = view.findViewById(R.id.txtCantidad);
+
+        final String[] cantidadDePedidosSeleccionados = new String[1];
+
+        alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Añadir al carro", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //cantidad que tu has escrito del pedido, como recibimos un String lo paso a double cambiando la coma por el punto para que funcione
+                 cantidadDePedidosSeleccionados[0] = editText.getText().toString();
+
+                //pasamos la cantidad a int
+                int cantidadPedidos = Integer.parseInt((cantidadDePedidosSeleccionados[0]));
+                Log.i("cantidad", String.valueOf(cantidadPedidos));
+
+                //recogemos el valor del precio de la lista
+                String precio = popularFoodList.get(position).getPrice();
+
+                //lo dividimos para quedarnos con los numeros
+                String [] precioProcesado = precio.split(" ");
+                Log.i("precio", precioProcesado[0]);
+
+                //metodo para sustituir las comas por punto y que pueda ser un double
+                double precioDouble = getValor(precioProcesado);
+                Log.i("precio", String.valueOf(precioDouble*cantidadPedidos));
+
+                //limitamos el numero de decimales a dos
+                DecimalFormat formato = new DecimalFormat("#.00");
+                double multiplicacion = precioDouble*cantidadPedidos;
+
+                //los valores que se pasaran  la cesta
+                pedidos.setName(popularFoodList.get(position).getName());
+                pedidos.setPrecio(Double.parseDouble(formato.format(multiplicacion)));
+                Toast.makeText(Activity2_platos.this, "pedido añadido", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Toast.makeText(Activity2_platos.this, "Operacion cancelada", Toast.LENGTH_SHORT).show();
+                alertDialog.dismiss();
+
+            }
+        });
+        alertDialog.setView(view);
+
+        alertDialog.show();
+
+    }
+    public double getValor(String []texto){
+        if(texto[0].contains(",")){
+            return Double.parseDouble(texto[0].replace(",", ".").trim());
+        }
+        return Double.parseDouble(texto[0].trim());
+    }
 }

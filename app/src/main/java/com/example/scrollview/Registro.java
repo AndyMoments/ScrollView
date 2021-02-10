@@ -1,5 +1,6 @@
 package com.example.scrollview;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -62,7 +63,7 @@ public class Registro extends AppCompatActivity {
                 user.setNombreUsuario(nombreUsuario);
                 user.setContraseña(password);
 
-                //crearusuario(nombreUsuario,password);
+                crearusuario(nombreUsuario,password);
 
                 //leerDocumento();
 
@@ -87,6 +88,9 @@ public class Registro extends AppCompatActivity {
                     public void onSuccess(DocumentReference documentReference) {
                         Toast.makeText(com.example.scrollview.Registro.this, "Registro completado", Toast.LENGTH_SHORT).show();
                         Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
+
+                        Intent intent = new Intent(Registro.this,MainActivity.class);
+                        startActivity(intent);
 
                     }
                 })
