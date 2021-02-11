@@ -25,186 +25,258 @@
             android:text="TU PEDIDO"
             android:textSize="50dp" />
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="332dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="200px"
+                    android:layout_marginLeft="200px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginEnd="200px"
+                    android:layout_marginRight="200px"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_nombre_pedido1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center|left" />
+
+                    <TextView
+                        android:id="@+id/txt_precio_pedido1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/marg"
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="200px"
+                    android:layout_marginLeft="200px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginEnd="200px"
+                    android:layout_marginRight="200px"                   android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_nombre_pedido2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/txt_precio_pedido2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="200px"
+                    android:layout_marginLeft="200px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginEnd="200px"
+                    android:layout_marginRight="200px"                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_nombre_pedido3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/txt_precio_pedido3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="200px"
+                    android:layout_marginLeft="200px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginEnd="200px"
+                    android:layout_marginRight="200px"                  android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_nombre_pedido4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/txt_precio_pedido4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_marginStart="200px"
+                    android:layout_marginLeft="200px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginEnd="200px"
+                    android:layout_marginRight="200px"                   android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_nombre_pedido5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/txt_precio_pedido5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_marginStart="200px"
+                    android:layout_marginLeft="200px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginEnd="200px"
+                    android:layout_marginRight="200px"                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_nombre_pedido6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/txt_precio_pedido6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_marginStart="200px"
+                    android:layout_marginLeft="200px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginEnd="200px"
+                    android:layout_marginRight="200px"                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_nombre_pedido7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/txt_precio_pedido7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:layout_marginStart="200px"
+                    android:layout_marginLeft="200px"
+                    android:layout_marginTop="10px"
+                    android:layout_marginEnd="200px"
+                    android:layout_marginRight="200px"                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_nombre_pedido8"
+                        android:layout_width="202dp"
+                        android:layout_height="5dp"
+                        android:layout_weight="1"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:id="@+id/txt_precio_pedido8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="left" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="30px"
+            android:paddingRight="30px">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="96dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abril_fatface"
+                android:includeFontPadding="false"
+                android:text="Precio total:"
+                android:textSize="28sp" />
+
+            <TextView
+                android:id="@+id/txt_precio_final"
+                android:layout_width="20dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="28sp" />
+
+            <Button
+                android:id="@+id/btn_finalizar_pedido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="10px"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_nombre_pedido1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/txt_precio_pedido1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/marg"
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="10px"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_nombre_pedido2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/txt_precio_pedido2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="10px"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_nombre_pedido3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/txt_precio_pedido3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="10px"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_nombre_pedido4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/txt_precio_pedido4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_marginTop="10px"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/txt_nombre_pedido5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/txt_precio_pedido5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_marginTop="10px"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:id="@+id/txt_nombre_pedido6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/txt_precio_pedido6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_marginTop="10px"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:id="@+id/txt_nombre_pedido7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/txt_precio_pedido7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="59dp"
-                android:layout_marginTop="10px"
-                android:gravity="center_vertical"
-                android:orientation="horizontal" >
-
-                <TextView
-                    android:id="@+id/txt_nombre_pedido8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center" />
-
-                <TextView
-                    android:id="@+id/txt_precio_pedido8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1" />
-            </LinearLayout>
-
+                android:layout_weight="1"
+                android:text="Comprar" />
         </LinearLayout>
 
     </LinearLayout>

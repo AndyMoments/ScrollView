@@ -1,3 +1,4 @@
+
 package com.example.scrollview;
 
 import androidx.annotation.RequiresApi;
@@ -136,11 +137,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
-
-
     }
-
-
 
     //la información que tiene cada restaurante
     private void setProductAdapter() {

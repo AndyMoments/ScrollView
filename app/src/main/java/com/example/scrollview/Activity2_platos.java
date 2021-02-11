@@ -3,33 +3,22 @@ package com.example.scrollview;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.scrollview.R;
-import com.example.scrollview.PopularFoodAdapter;
-import com.example.scrollview.PopularFood;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Activity2_platos extends AppCompatActivity {
 
@@ -127,6 +116,7 @@ public class Activity2_platos extends AppCompatActivity {
 
         builder = new AlertDialog.Builder(this);
 
+        //On click para saber a que carta del menu seleccionas
         popularRecycler.addOnItemTouchListener(new RecyclerItemClickListener(this, popularRecycler ,new RecyclerItemClickListener.OnItemClickListener() {
             @Override public void onItemClick(View view, int position) {
 
@@ -153,19 +143,30 @@ public class Activity2_platos extends AppCompatActivity {
 
                 }
 
-                productosAñadidos++; //contador de cuantos pedidos se han añadido a la cesta
+                //mirar otra forma si es posible
+                //temporizador para que el valor de pedidos.getPrecios recoga lo que tu hayas pedido en la alerta
+                Handler handler = new Handler();
 
-                arrayPedidos.add(pedidos); //guardamos en el array los pedidos que se soliciten
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //de esta forma si le das a cancelar no te lleva a la cesta un pedido por defecto
+                        Log.i("precioPedido", String.valueOf(pedidos.getPrecio()));
+                        if (pedidos.getPrecio()>0) {
 
-                Log.i("pedidosarray", String.valueOf(arrayPedidos));
+                            productosAñadidos++; //contador de cuantos pedidos se han añadido a la cesta
 
+                            arrayPedidos.add(pedidos); //guardamos en el array los pedidos que se soliciten
+
+                            Log.i("pedidosarray", String.valueOf(arrayPedidos));
+                        }
+                    }
+                },6000);
             }
             @Override public void onLongItemClick(View view, int position) {
 
             }
         }));
-
-
 
         //ir a la cesta
         imgbtn.setOnClickListener(new View.OnClickListener() {
@@ -208,6 +209,7 @@ public class Activity2_platos extends AppCompatActivity {
 
         final String[] cantidadDePedidosSeleccionados = new String[1];
 
+        //boton de añadir al carrito el pedido
         alertDialog.setButton(AlertDialog.BUTTON_POSITIVE, "Añadir al carro", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -240,6 +242,7 @@ public class Activity2_platos extends AppCompatActivity {
 
             }
         });
+        //boton de cancelar el pedido
         alertDialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancelar", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -248,11 +251,13 @@ public class Activity2_platos extends AppCompatActivity {
 
             }
         });
+
         alertDialog.setView(view);
 
         alertDialog.show();
 
     }
+    //metodo para sustitutir las comas por puntos de un string
     public double getValor(String []texto){
         if(texto[0].contains(",")){
             return Double.parseDouble(texto[0].replace(",", ".").trim());

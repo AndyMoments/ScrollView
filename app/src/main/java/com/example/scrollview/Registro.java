@@ -65,10 +65,6 @@ public class Registro extends AppCompatActivity {
 
                 crearusuario(nombreUsuario,password);
 
-                //leerDocumento();
-
-                //Log.i("creed2",creedenciales);
-
             }
         });
     }
@@ -80,6 +76,7 @@ public class Registro extends AppCompatActivity {
         user.put("usuario", nombreUsuario);
         user.put("contraseña", contraseña);
 
+
 // Add a new document with a generated ID
         db.collection("users")
                 .add(user)
@@ -90,6 +87,7 @@ public class Registro extends AppCompatActivity {
                         Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
 
                         Intent intent = new Intent(Registro.this,MainActivity.class);
+                        intent.putExtra("nombre",nombreUsuario);
                         startActivity(intent);
 
                     }
