@@ -11,8 +11,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +25,11 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayoutManager manager;
     private ProductAdapter productAdapter;
     private String nombre;
+    private String contraseña;
     private int restauranteElegido = 0;
     private ImageButton imgbtn;
     private ImageButton img_icon;
+    private ImageView btnConfiguracion;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -35,8 +37,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        imgbtn = findViewById(R.id.img_btn);imgbtn = findViewById(R.id.img_btn);
+        imgbtn = findViewById(R.id.img_btn_cesta);imgbtn = findViewById(R.id.img_btn_cesta);
         img_icon = findViewById(R.id.img_icon);img_icon = findViewById(R.id.img_icon);
+        btnConfiguracion = findViewById(R.id.img_configuracion);
 
         Utils.changeStatusBarAndNavigationBarColor(MainActivity.this, R.color.mirage, R.color.mirage_dark);
 
@@ -49,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         nombre = intent.getStringExtra("nombre");
         nombreUsuario.setText(nombre);
 
+        //recogemos tambien la contraseña
+        contraseña = intent.getStringExtra("contra");
+        Log.i("contra",contraseña);
 
         setProductAdapter();
 
@@ -129,10 +135,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }));
 
+        //botons para ir a la cesta
         imgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 Intent cesta = new Intent(MainActivity.this,Cesta.class);
 
@@ -140,14 +146,25 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //boton de configuracion arriba
         img_icon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
-                Intent cesta = new Intent(MainActivity.this,Layout_Account.class);
-
-                startActivity(cesta);
+                Intent config = new Intent(MainActivity.this,Layout_Account.class);
+                config.putExtra("nombre",nombre);
+                config.putExtra("contra",contraseña);
+                startActivity(config);
+            }
+        });
+        //boton de configuracion abajo
+        btnConfiguracion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent config = new Intent(MainActivity.this,Layout_Account.class);
+                config.putExtra("nombre",nombre);
+                config.putExtra("contra",contraseña);
+                startActivity(config);
             }
         });
 

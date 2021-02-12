@@ -26,7 +26,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.prefs.PreferenceChangeEvent;
 
 public class Registro extends AppCompatActivity {
 
@@ -50,9 +49,9 @@ public class Registro extends AppCompatActivity {
 
         Utils.changeStatusBarAndNavigationBarColor(Registro.this, R.color.mirage, R.color.mirage_dark);
 
-        etxtUsuario = findViewById(R.id.etxt_usuario);
-        etxtContraseña = findViewById(R.id.etxt_contraseña);
-        btnCrearUsuario = findViewById(R.id.btn_crear_usuario);
+        etxtUsuario = findViewById(R.id.etxt_usuario_config);
+        etxtContraseña = findViewById(R.id.etxt_contraseña_congif);
+        btnCrearUsuario = findViewById(R.id.btn_cambiar_creedenciales);
 
 
         btnCrearUsuario.setOnClickListener(new View.OnClickListener() {
@@ -92,7 +91,9 @@ public class Registro extends AppCompatActivity {
                         Log.d("TAG", "DocumentSnapshot added with ID: " + documentReference.getId());
 
                         Intent intent = new Intent(Registro.this,MainActivity.class);
+                        //pasamos los dos parametros para tenerlos en la siguiente pagina
                         intent.putExtra("nombre",nombreUsuario);
+                        intent.putExtra("contra",contraseña);
                         startActivity(intent);
 
                     }

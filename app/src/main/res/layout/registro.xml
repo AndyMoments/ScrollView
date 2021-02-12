@@ -70,7 +70,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/etxt_usuario"
+                android:id="@+id/etxt_usuario_config"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60px"
@@ -89,7 +89,7 @@
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/etxt_contraseña"
+                android:id="@+id/etxt_contraseña_congif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60px"
@@ -99,7 +99,7 @@
                 android:background="@color/mirage_dark" />
 
             <Button
-                android:id="@+id/btn_crear_usuario"
+                android:id="@+id/btn_cambiar_creedenciales"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

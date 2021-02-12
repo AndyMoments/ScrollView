@@ -53,17 +53,20 @@
             android:layout_marginTop="60px"
             android:paddingLeft="60px"
             android:text="Usuario"
-            android:textSize="18sp" />
+            android:textColor="#070707"
+            android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/etxt_usuario"
+            android:id="@+id/etxt_usuario_config"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60px"
             android:background="@color/mirage_dark"
             android:ems="10"
             android:inputType="textEmailAddress"
-            android:paddingLeft="60px" />
+            android:paddingLeft="60px"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txt_contraseña"
@@ -72,60 +75,32 @@
             android:layout_marginTop="60px"
             android:paddingLeft="60px"
             android:text="Contraseña"
-            android:textSize="18sp" />
+            android:textColor="#000000"
+            android:textSize="22sp" />
 
         <EditText
-            android:id="@+id/etxt_contraseña"
+            android:id="@+id/etxt_contraseña_congif"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60px"
             android:background="@color/mirage_dark"
             android:ems="10"
             android:inputType="textPersonName"
-            android:paddingLeft="60px" />
+            android:paddingLeft="60px"
+            android:textColor="#FAF9F9"
+            android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btn_crear_usuario"
+            android:id="@+id/btn_cambiar_creedenciales"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="100px"
-            android:text="Aceptar" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/layout_bottoms"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_70sdp"
-        android:orientation="horizontal"
-        android:background="@drawable/bottom_layout"
-        android:layout_alignParentBottom="true"
-        android:gravity="center">
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_20sdp"
-            android:src="@drawable/shopping_bag"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"/>
-
-        <ImageButton
-            android:id="@+id/img_btn"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_weight="1"
-            android:src="@drawable/shopping_bag"
-            android:background="@android:color/transparent"/>/>
-
-        <ImageView
-            android:layout_width="0dp"
-            android:layout_height="@dimen/_20sdp"
-            android:src="@drawable/shopping_bag"
-            android:background="@android:color/transparent"
-            android:layout_weight="1"/>
-
-
-
+            android:enabled="false"
+            android:text="Cambiar creedenciales"
+            android:textSize="17sp"
+            app:backgroundTint="#571717"
+            app:rippleColor="#1C1A1A" />
     </LinearLayout>
 
 </RelativeLayout>

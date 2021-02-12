@@ -14,8 +14,9 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".AlertDialog"></activity>
         <activity android:name=".Cesta" />
+        <activity android:name=".Layout_Account"></activity>
         <activity android:name=".Activity2_platos" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Registro" />
-        <activity android:name=".SplashScreen" />
+        <activity android:name=".MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

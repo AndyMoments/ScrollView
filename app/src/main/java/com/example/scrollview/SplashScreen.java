@@ -29,12 +29,10 @@ public class SplashScreen extends AppCompatActivity {
     private final int DURACION_CARGA = 6000;
 
     String creedenciales = null;
-
     boolean verification;
-
     String datosNube;
-
     String nombrePersona;
+    String contraseña;
 
     Registro registro = new Registro();
 
@@ -96,12 +94,14 @@ public class SplashScreen extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
 
-                                     datosNube = document.getData().get("usuario") + "," + document.getData().get("contraseña");
+                                    datosNube = document.getData().get("usuario") + "," + document.getData().get("contraseña");
                                     Log.d("datosnube", datosNube);
 
                                         if (datosNube.equals(creedenciales)) {
                                             Log.i("creed", "son iguales");
+                                            //valores de los creedenciales para pasarlas al main activity
                                             nombrePersona = document.getData().get("usuario") + "";
+                                            contraseña = document.getData().get("contraseña") + "";
                                             verification=true;
                                             break;
                                         }
@@ -131,6 +131,8 @@ public class SplashScreen extends AppCompatActivity {
             Log.d("acceso","confirmado, llevandote al menu");
             Intent intent2 = new Intent(com.example.scrollview.SplashScreen.this, MainActivity.class);
             intent2.putExtra("nombre",nombrePersona);
+            intent2.putExtra("contra",contraseña);
+
             startActivity(intent2);
         }
         else{

@@ -55,14 +55,15 @@
         android:gravity="center">
 
         <ImageView
+            android:id="@+id/img_configuracion"
             android:layout_width="0dp"
             android:layout_height="@dimen/_20sdp"
-            android:src="@drawable/settings_icon"
+            android:layout_weight="1"
             android:background="@android:color/transparent"
-            android:layout_weight="1"/>
+            android:src="@drawable/settings_icon" />
 
         <ImageButton
-            android:id="@+id/img_btn"
+            android:id="@+id/img_btn_cesta"
             android:layout_width="0dp"
             android:layout_height="@dimen/_20sdp"
             android:layout_weight="1"
