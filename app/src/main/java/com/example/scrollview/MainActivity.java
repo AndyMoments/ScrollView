@@ -10,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,11 +26,17 @@ public class MainActivity extends AppCompatActivity {
     private ProductAdapter productAdapter;
     private String nombre;
     private int restauranteElegido = 0;
+    private ImageButton imgbtn;
+    private ImageButton img_icon;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        imgbtn = findViewById(R.id.img_btn);imgbtn = findViewById(R.id.img_btn);
+        img_icon = findViewById(R.id.img_icon);img_icon = findViewById(R.id.img_icon);
 
         Utils.changeStatusBarAndNavigationBarColor(MainActivity.this, R.color.mirage, R.color.mirage_dark);
 
@@ -115,15 +122,34 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-
             }
 
             @Override public void onLongItemClick(View view, int position) {
 
-
-
             }
         }));
+
+        imgbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent cesta = new Intent(MainActivity.this,Cesta.class);
+
+                startActivity(cesta);
+            }
+        });
+
+        img_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent cesta = new Intent(MainActivity.this,Layout_Account.class);
+
+                startActivity(cesta);
+            }
+        });
 
     }
 

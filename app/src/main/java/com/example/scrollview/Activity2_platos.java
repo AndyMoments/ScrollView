@@ -1,6 +1,7 @@
 package com.example.scrollview;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -36,10 +38,12 @@ public class Activity2_platos extends AppCompatActivity {
     private ArrayList<Pedidos> arrayPedidos = new ArrayList<>(); //array donde se almacenaran los datos de los pedidos que se añaden a la cesta
 
     List<PopularFood> popularFoodList = new ArrayList<>();
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedIstanceState) {
         super.onCreate(savedIstanceState);
         setContentView(R.layout.activity_2platos);
+        Utils.changeStatusBarAndNavigationBarColor(Activity2_platos.this, R.color.mirage, R.color.mirage_dark);
 
         imgbtn = findViewById(R.id.img_btn);
 

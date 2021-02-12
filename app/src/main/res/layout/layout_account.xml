@@ -20,7 +20,7 @@
         android:layout_marginRight="@dimen/_10sdp"
         android:background="@drawable/circle_orange"
         android:padding="@dimen/_10sdp"
-        android:src="@drawable/shopping_bag"
+        android:src="@drawable/arrow_back"
         app:tint="@color/white" />
 
     <TextView
@@ -33,82 +33,65 @@
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_toRightOf="@+id/img_icon"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/restaurant_name"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginRight="143dp"
-        android:paddingLeft="@dimen/_30sdp"
-        android:paddingTop="@dimen/_30sdp"
-        android:text="Nombre de usuario:"
-        android:textSize="@dimen/_20sdp" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editText1"
-        android:layout_width="348dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@color/mirage_dark"
-        android:paddingLeft="@dimen/_30sdp"
-        android:paddingTop="@dimen/_10sdp"
-        android:text="Nombre de usuario"
-        android:textSize="@dimen/_18sdp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText1"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="107dp"
-        android:layout_marginRight="107dp"
-        android:paddingLeft="@dimen/_30sdp"
-        android:paddingTop="@dimen/_30sdp"
-        android:text="Contraseña de usuario:"
-        android:textSize="@dimen/_20sdp" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/editText2"
-        android:layout_width="348dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView3"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@color/mirage_dark"
-        android:paddingLeft="@dimen/_30sdp"
-        android:paddingTop="@dimen/_10sdp"
-        android:text="Contraseña de usuario"
-        android:textSize="@dimen/_18sdp" />
-
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/layout_bottoms"
-android:layout_centerInParent="true"
-        android:layout_below="@+id/editText2"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="100dp"
-        android:text="Cambiar datos" />
+        android:layout_below="@id/restaurant_name"
+        android:layout_marginStart="80px"
+        android:layout_marginLeft="80px"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="80px"
+        android:layout_marginRight="80px"
+        android:layout_marginBottom="83dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_Username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60px"
+            android:paddingLeft="60px"
+            android:text="Usuario"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/etxt_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60px"
+            android:background="@color/mirage_dark"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="60px" />
+
+        <TextView
+            android:id="@+id/txt_contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60px"
+            android:paddingLeft="60px"
+            android:text="Contraseña"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/etxt_contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60px"
+            android:background="@color/mirage_dark"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:paddingLeft="60px" />
+
+        <Button
+            android:id="@+id/btn_crear_usuario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="100px"
+            android:text="Aceptar" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/layout_bottoms"
