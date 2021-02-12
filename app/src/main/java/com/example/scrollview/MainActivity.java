@@ -1,4 +1,3 @@
-
 package com.example.scrollview;
 
 import androidx.annotation.RequiresApi;
@@ -11,7 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,18 +26,22 @@ public class MainActivity extends AppCompatActivity {
     private ProductAdapter productAdapter;
     private String nombre;
     private int restauranteElegido = 0;
-    private ImageView cesta;
+    private ImageButton imgbtn;
+    private ImageButton img_icon;
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        imgbtn = findViewById(R.id.img_btn);imgbtn = findViewById(R.id.img_btn);
+        img_icon = findViewById(R.id.img_icon);img_icon = findViewById(R.id.img_icon);
+
         Utils.changeStatusBarAndNavigationBarColor(MainActivity.this, R.color.mirage, R.color.mirage_dark);
 
         recyclerView = findViewById(R.id.recyclerView);
         nombreUsuario = findViewById(R.id.userName);
-        cesta = findViewById(R.id.cesta);
 
         //nombre de bienvenido del usuario que me lo pasa la pagina de validacion
 
@@ -46,16 +49,8 @@ public class MainActivity extends AppCompatActivity {
         nombre = intent.getStringExtra("nombre");
         nombreUsuario.setText(nombre);
 
-        setProductAdapter();
 
-        //click en la cesta
-        cesta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(MainActivity.this,Cesta.class);
-                startActivity(intent2);
-            }
-        });
+        setProductAdapter();
 
         //metodo para saber a que restaurante le estas dando click
 
@@ -127,15 +122,34 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-
             }
 
             @Override public void onLongItemClick(View view, int position) {
 
-
-
             }
         }));
+
+        imgbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent cesta = new Intent(MainActivity.this,Cesta.class);
+
+                startActivity(cesta);
+            }
+        });
+
+        img_icon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                Intent cesta = new Intent(MainActivity.this,Layout_Account.class);
+
+                startActivity(cesta);
+            }
+        });
 
     }
 
@@ -162,6 +176,5 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
 }

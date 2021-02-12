@@ -15,7 +15,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:background="#1C2971"
+        android:background="#9E6C0A"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:gravity="center"
-            android:text="Cargando informacion"
+            android:text="Cargando información"
             android:textColor="#FFFAFA"
             android:textSize="36sp" />
 
