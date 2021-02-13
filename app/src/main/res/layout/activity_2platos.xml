@@ -10,7 +10,7 @@
     tools:ignore="MissingDefaultResource">
 
     <ImageButton
-        android:id="@+id/img_icon"
+        android:id="@+id/img_back_pressed"
         android:layout_width="@dimen/_45sdp"
         android:layout_height="@dimen/_45sdp"
         android:layout_marginStart="@dimen/_15sdp"
@@ -32,7 +32,7 @@
         android:textSize="@dimen/_30sdp"
         android:text="Restaurante"
         android:layout_marginTop="@dimen/_15sdp"
-        android:layout_toRightOf="@+id/img_icon"/>
+        android:layout_toRightOf="@+id/img_back_pressed"/>
 
 
 

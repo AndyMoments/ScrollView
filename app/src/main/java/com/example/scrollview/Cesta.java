@@ -51,6 +51,8 @@ public class Cesta extends AppCompatActivity {
     private Double precioFinal = 0.0;
     private String precioString;
     private int tiempo;
+    private String nombre;
+    private String contraseña;
     //creamos la alerta
     AlertDialog.Builder builder;
 
@@ -82,6 +84,10 @@ public class Cesta extends AppCompatActivity {
         txtPrecioOctavoPlato = findViewById(R.id.txt_precio_pedido8);
         precioTotal = findViewById(R.id.txt_precio_final);
         btnFinalizarCompra = findViewById(R.id.btn_finalizar_pedido);
+
+        Intent intent = getIntent();
+        nombre = intent.getStringExtra("nombre");
+        contraseña = intent.getStringExtra("contra");
 
         Bundle extras = getIntent().getExtras();
 
@@ -251,6 +257,8 @@ public class Cesta extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(Cesta.this,MainActivity.class);
+                intent.putExtra("nombre",nombre);
+                intent.putExtra("contra",contraseña);
                 startActivity(intent);
             }
         });

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imgbtn = findViewById(R.id.img_btn_cesta);imgbtn = findViewById(R.id.img_btn_cesta);
-        img_icon = findViewById(R.id.img_icon);img_icon = findViewById(R.id.img_icon);
+        img_icon = findViewById(R.id.img_back_pressed);img_icon = findViewById(R.id.img_back_pressed);
         btnConfiguracion = findViewById(R.id.img_configuracion);
 
         Utils.changeStatusBarAndNavigationBarColor(MainActivity.this, R.color.mirage, R.color.mirage_dark);
@@ -69,6 +69,11 @@ public class MainActivity extends AppCompatActivity {
                     restauranteElegido = 1;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    //pasamos estos datos para el onBackPressed
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
+                    //para que se vea el nombre de cada restaurante enviamos el dato
+                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
                     startActivity(intent1);
 
                 }
@@ -76,54 +81,85 @@ public class MainActivity extends AppCompatActivity {
                     restauranteElegido = 2;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
+                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
                     startActivity(intent1);
                 }
                 else if (position==2){
                     restauranteElegido = 3;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
+                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
                     startActivity(intent1);
                 }
                 else if (position==3){
                     restauranteElegido = 4;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
+                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
                     startActivity(intent1);
                 }
                 else if (position==4){
                     restauranteElegido = 5;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
+                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
                     startActivity(intent1);
                 }
                 else if (position==5){
                     restauranteElegido = 6;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
+                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
                     startActivity(intent1);
                 }
                 else if (position==6){
                     restauranteElegido = 7;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
+                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
                     startActivity(intent1);
                 }
                 else if (position==7){
                     restauranteElegido = 8;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
                     startActivity(intent1);
                 }
                 else if (position==8){
                     restauranteElegido = 9;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
+                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
                     startActivity(intent1);
                 }
                 else if (position==9){
                     restauranteElegido = 10;
                     Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
                     intent1.putExtra("restauranteElegido",restauranteElegido);
+                    intent1.putExtra("nombre",nombre);
+                    intent1.putExtra("contra",contraseña);
+                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
                     startActivity(intent1);
 
                 }

@@ -33,6 +33,12 @@ public class Activity2_platos extends AppCompatActivity {
     private int restaurantElegido = 0;
     private int productosAñadidos = 0;
     private TextView txtcantidad;
+    private ImageView imgBack;
+    private ImageView btnConfig;
+    private TextView txtRestaurante;
+    private String nombre; //nombre y contraseña del ususario para el onbackPresed
+    private String contraseña;
+    private String nombreRestaurante;
 
     private ArrayList<Pedidos> arrayPedidos = new ArrayList<>(); //array donde se almacenaran los datos de los pedidos que se añaden a la cesta
 
@@ -46,11 +52,22 @@ public class Activity2_platos extends AppCompatActivity {
 
         imgbtn = findViewById(R.id.img_btn_cesta);
         txtcantidad = findViewById(R.id.txt_Cantidad_row_item);
+        imgBack = findViewById(R.id.img_back_pressed);
+        btnConfig = findViewById(R.id.img_configuracion);
+        txtRestaurante = findViewById(R.id.restaurant_name);
 
         //recuperamos el int que devuelve la pagina anterior para saber que restaurante has elegido
 
         Intent intent = getIntent();
+        //saber que restaurante has elegido
         restaurantElegido = intent.getIntExtra("restauranteElegido",0);
+        nombre = intent.getStringExtra("nombre");
+        contraseña = intent.getStringExtra("contra");
+        //nombre del restaurante
+        nombreRestaurante = intent.getStringExtra("restaurante");
+
+        //ponemos el nombre del restaurante
+        txtRestaurante.setText(nombreRestaurante);
 
         //los distintos platos de cada restaurante
 
@@ -173,7 +190,7 @@ public class Activity2_platos extends AppCompatActivity {
             }
         }));
 
-        //ir a la cesta
+        //boton ir a la cesta
         imgbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -183,8 +200,31 @@ public class Activity2_platos extends AppCompatActivity {
                 Intent cesta = new Intent(Activity2_platos.this,Cesta.class);
 
                 cesta.putExtra("arrayPedidos",arrayPedidos);
+                cesta.putExtra("nombre",nombre);
+                cesta.putExtra("contra",contraseña);
 
                 startActivity(cesta);
+            }
+        });
+
+        //boton ir atras
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                onBackPressed();
+
+            }
+        });
+
+        //boton de configuracion abajo
+        btnConfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent config = new Intent(Activity2_platos.this,Layout_Account.class);
+                config.putExtra("nombre",nombre);
+                config.putExtra("contra",contraseña);
+                startActivity(config);
             }
         });
 
@@ -268,5 +308,9 @@ public class Activity2_platos extends AppCompatActivity {
             return Double.parseDouble(texto[0].replace(",", ".").trim());
         }
         return Double.parseDouble(texto[0].trim());
+    }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }
