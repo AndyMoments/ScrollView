@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/mirage"
     tools:context=".Cesta">
 
     <LinearLayout
@@ -17,10 +18,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:fontFamily="@font/abril_fatface"
             android:id="@+id/txt_tu_pedido"
+            android:textColor="@color/white"
             android:layout_width="match_parent"
             android:layout_height="80sp"
-            android:layout_marginTop="300px"
+            android:layout_marginTop="150px"
+            android:layout_marginBottom="50px"
             android:gravity="center"
             android:text="TU PEDIDO"
             android:textSize="50dp" />
@@ -43,7 +47,8 @@
                     android:layout_marginTop="10px"
                     android:layout_marginEnd="200px"
                     android:layout_marginRight="200px"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/account_box">
 
                     <TextView
                         android:id="@+id/txt_nombre_pedido1"
@@ -51,7 +56,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
-                        android:gravity="center|left" />
+                        android:gravity="center|left"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
 
                     <TextView
                         android:id="@+id/txt_precio_pedido1"
@@ -59,7 +67,10 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -72,21 +83,28 @@
                     android:layout_marginTop="10px"
                     android:layout_marginEnd="200px"
                     android:layout_marginRight="200px"                   android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/account_box" >
 
                     <TextView
                         android:id="@+id/txt_nombre_pedido2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
 
                     <TextView
                         android:id="@+id/txt_precio_pedido2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -98,21 +116,28 @@
                     android:layout_marginTop="10px"
                     android:layout_marginEnd="200px"
                     android:layout_marginRight="200px"                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/account_box">
 
                     <TextView
                         android:id="@+id/txt_nombre_pedido3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
 
                     <TextView
                         android:id="@+id/txt_precio_pedido3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -124,21 +149,28 @@
                     android:layout_marginTop="10px"
                     android:layout_marginEnd="200px"
                     android:layout_marginRight="200px"                  android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/account_box">
 
                     <TextView
                         android:id="@+id/txt_nombre_pedido4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
 
                     <TextView
                         android:id="@+id/txt_precio_pedido4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
 
                 </LinearLayout>
 
@@ -150,21 +182,28 @@
                     android:layout_marginTop="10px"
                     android:layout_marginEnd="200px"
                     android:layout_marginRight="200px"                   android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/account_box">
 
                     <TextView
                         android:id="@+id/txt_nombre_pedido5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
 
                     <TextView
                         android:id="@+id/txt_precio_pedido5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -175,21 +214,28 @@
                     android:layout_marginTop="10px"
                     android:layout_marginEnd="200px"
                     android:layout_marginRight="200px"                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/account_box">
 
                     <TextView
                         android:id="@+id/txt_nombre_pedido6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
 
                     <TextView
                         android:id="@+id/txt_precio_pedido6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -200,21 +246,28 @@
                     android:layout_marginTop="10px"
                     android:layout_marginEnd="200px"
                     android:layout_marginRight="200px"                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/account_box">
 
                     <TextView
                         android:id="@+id/txt_nombre_pedido7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
 
                     <TextView
                         android:id="@+id/txt_precio_pedido7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right" />
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -225,58 +278,66 @@
                     android:layout_marginTop="10px"
                     android:layout_marginEnd="200px"
                     android:layout_marginRight="200px"                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:background="@drawable/account_box">
 
                     <TextView
                         android:id="@+id/txt_nombre_pedido8"
-                        android:layout_width="202dp"
-                        android:layout_height="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left" />
+                        android:gravity="left"
+                        android:layout_marginLeft="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
 
                     <TextView
                         android:id="@+id/txt_precio_pedido8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left" />
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:textColor="@color/price"
+                        android:fontFamily="@font/abril_fatface"/>
                 </LinearLayout>
 
             </LinearLayout>
+
         </ScrollView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
+            android:gravity="center"
+            android:orientation="vertical"
             android:paddingLeft="30px"
             android:paddingRight="30px">
 
             <TextView
                 android:id="@+id/textView3"
-                android:layout_width="96dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/abril_fatface"
-                android:includeFontPadding="false"
                 android:text="Precio total:"
                 android:textSize="28sp" />
 
             <TextView
                 android:id="@+id/txt_precio_final"
-                android:layout_width="20dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif-condensed"
+                android:fontFamily="@font/abril_fatface"
                 android:textSize="28sp" />
 
             <Button
                 android:id="@+id/btn_finalizar_pedido"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="1"
-                android:text="Comprar" />
+                android:layout_gravity="center"
+                android:text="Comprar"
+                android:textSize="17sp"
+                android:fontFamily="@font/abril_fatface"
+                app:backgroundTint="@color/orange" />
         </LinearLayout>
 
     </LinearLayout>

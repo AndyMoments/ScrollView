@@ -2,6 +2,7 @@ package com.example.scrollview;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -14,6 +15,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -44,10 +46,13 @@ public class Layout_Account extends AppCompatActivity {
 
     Registro registro = new Registro();
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_account);
+
+        Utils.changeStatusBarAndNavigationBarColor(Layout_Account.this, R.color.mirage, R.color.mirage_dark);
 
         etxtUsuario = findViewById(R.id.etxt_usuario_config);
         etxtContraseña = findViewById(R.id.etxt_contraseña_congif);

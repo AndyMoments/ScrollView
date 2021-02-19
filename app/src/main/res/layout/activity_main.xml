@@ -20,7 +20,6 @@
         android:scaleType="fitXY"
         app:tint="@color/white"
         android:layout_alignParentRight="true"/>
-/>
 
     <LinearLayout
         android:id="@+id/layout_text"
@@ -34,19 +33,25 @@
 
         <TextView
             android:id="@+id/bienvenido"
+            android:fontFamily="@font/abril_fatface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Bienvenido,"
             android:textColor="@color/white"
-            android:textSize="@dimen/_30sdp" />
+            android:textSize="@dimen/_30sdp"
+            android:shadowColor="@color/gray_d"
+            android:shadowRadius="10"/>
 
         <TextView
             android:id="@+id/userName"
+            android:fontFamily="@font/abril_fatface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="-10dp"
             android:textColor="@color/white"
-            android:textSize="@dimen/_30sdp" />
+            android:textSize="@dimen/_30sdp"
+            android:shadowColor="@color/gray_d"
+            android:shadowRadius="10"/>
 
 
 

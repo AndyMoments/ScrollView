@@ -1,11 +1,13 @@
 package com.example.scrollview;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -61,10 +63,13 @@ public class Cesta extends AppCompatActivity {
     ArrayList<String> nombrePedidos = new ArrayList<>();
     ArrayList<Double> precioPedidos = new ArrayList<>();
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cesta);
+
+        Utils.changeStatusBarAndNavigationBarColor(Cesta.this, R.color.mirage, R.color.mirage_dark);
 
         txtNombrePrimerPLato = findViewById(R.id.txt_nombre_pedido1);
         txtPrecioprimerPlato = findViewById(R.id.txt_precio_pedido1);

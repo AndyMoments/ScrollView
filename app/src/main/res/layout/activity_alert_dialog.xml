@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:scaleType="center"
-        android:background="#FFFFBB33"
+        android:background="@color/mirage"
         android:contentDescription="@string/app_name" />
 
     <LinearLayout
@@ -21,16 +21,18 @@
 
         <TextView
             android:id="@+id/txtCantidadAlert"
+            android:fontFamily="@font/abril_fatface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="sans-serif-condensed"
+            android:ems="10"
             android:paddingRight="40px"
             android:text="Cantidad:"
             android:textSize="20sp" />
 
         <EditText
             android:id="@+id/txtCantidad"
+            android:fontFamily="@font/abril_fatface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

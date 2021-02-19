@@ -25,22 +25,45 @@
 
     <TextView
         android:id="@+id/restaurant_name"
+        android:fontFamily="@font/abril_fatface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:textSize="@dimen/_30sdp"
         android:text="Mi cuenta"
         android:layout_marginTop="@dimen/_15sdp"
-        android:layout_toRightOf="@+id/img_back_pressed"/>
+        android:layout_toRightOf="@+id/img_back_pressed"
+        android:shadowColor="@color/gray_d"
+        android:shadowRadius="10"/>
+
+
+    <ImageButton
+        android:id="@+id/img_account"
+        android:layout_width="107dp"
+        android:layout_height="105dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="152dp"
+        android:layout_marginLeft="152dp"
+        android:layout_marginTop="@dimen/_100sdp"
+        android:layout_marginEnd="152dp"
+        android:layout_marginRight="152dp"
+        android:background="@drawable/circle_orange"
+        android:scaleType="fitXY"
+        android:src="@drawable/usuariocirculo"
+        app:tint="@color/white" />
 
     <LinearLayout
+        android:id="@+id/linear_account"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/layout_bottoms"
         android:layout_below="@id/restaurant_name"
         android:layout_marginStart="80px"
         android:layout_marginLeft="80px"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="170dp"
         android:layout_marginEnd="80px"
         android:layout_marginRight="80px"
         android:layout_marginBottom="83dp"
@@ -48,58 +71,68 @@
 
         <TextView
             android:id="@+id/txt_Username"
+            android:fontFamily="@font/abril_fatface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60px"
             android:paddingLeft="60px"
-            android:text="Usuario"
-            android:textColor="#070707"
-            android:textSize="22sp" />
+            android:text="Usuario:"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:shadowColor="@color/gray_d"
+            android:shadowRadius="10"/>
 
         <EditText
             android:id="@+id/etxt_usuario_config"
+            android:fontFamily="@font/abril_fatface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60px"
-            android:background="@color/mirage_dark"
+            android:background="@drawable/account_box"
             android:ems="10"
             android:inputType="textEmailAddress"
             android:paddingLeft="60px"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/price"
             android:textSize="20sp" />
 
         <TextView
             android:id="@+id/txt_contraseña"
+            android:fontFamily="@font/abril_fatface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60px"
             android:paddingLeft="60px"
-            android:text="Contraseña"
-            android:textColor="#000000"
-            android:textSize="22sp" />
+            android:text="Contraseña:"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:shadowColor="@color/gray_d"
+            android:shadowRadius="10"/>
 
         <EditText
             android:id="@+id/etxt_contraseña_congif"
+            android:fontFamily="@font/abril_fatface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60px"
-            android:background="@color/mirage_dark"
+            android:background="@drawable/account_box"
             android:ems="10"
             android:inputType="textPersonName"
             android:paddingLeft="60px"
-            android:textColor="#FAF9F9"
+            android:textColor="@color/price"
             android:textSize="20sp" />
 
         <Button
             android:id="@+id/btn_cambiar_creedenciales"
+            android:fontFamily="@font/abril_fatface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="100px"
             android:enabled="false"
             android:text="Cambiar creedenciales"
+            android:textColor="@color/white"
             android:textSize="17sp"
-            app:backgroundTint="#571717"
+            app:backgroundTint="@color/orange"
             app:rippleColor="#1C1A1A" />
     </LinearLayout>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pulsador1"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
@@ -21,6 +21,7 @@
             android:background="@drawable/rectangle_stroke">
             <TextView
                 android:id="@+id/tv_name"
+                android:fontFamily="@font/abril_fatface"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
@@ -34,6 +35,7 @@
 
             <TextView
                 android:id="@+id/tv_desc"
+                android:fontFamily="@font/abril_fatface"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_name"
@@ -54,6 +56,7 @@
 
                 <TextView
                     android:id="@+id/tv_price"
+                    android:fontFamily="@font/abril_fatface"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_name"
@@ -74,7 +77,8 @@
                     android:layout_marginRight="@dimen/_10sdp"
                     android:background="@drawable/circle_orange"
                     android:padding="@dimen/_13sdp"
-                    android:src="@drawable/shopping_bag" />
+                    android:src="@drawable/arrow_right"
+                    app:tint="@color/white" />
 
 
             </LinearLayout>
