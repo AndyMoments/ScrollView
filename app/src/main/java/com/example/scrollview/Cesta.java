@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,12 +51,23 @@ public class Cesta extends AppCompatActivity {
     private TextView txtPrecioOctavoPlato;
     private TextView precioTotal;
     private Button btnFinalizarCompra;
+    private ImageView imgOnBackPressed;
+    private ImageButton btnEliminar1;
+    private ImageButton btnEliminar2;
+    private ImageButton btnEliminar3;
+    private ImageButton btnEliminar4;
+    private ImageButton btnEliminar5;
+    private ImageButton btnEliminar6;
+    private ImageButton btnEliminar7;
+    private ImageButton btnEliminar8;
+
     int contador = 0;
     private Double precioFinal = 0.0;
     private String precioString;
     private int tiempo;
     private String nombre;
     private String contraseña;
+    private int pedidoParaEliminar;
     //creamos la alerta
     AlertDialog.Builder builder;
 
@@ -89,6 +102,17 @@ public class Cesta extends AppCompatActivity {
         txtPrecioOctavoPlato = findViewById(R.id.txt_precio_pedido8);
         precioTotal = findViewById(R.id.txt_precio_final);
         btnFinalizarCompra = findViewById(R.id.btn_finalizar_pedido);
+        imgOnBackPressed = findViewById(R.id.img_back_pressed2);
+        btnEliminar1 = findViewById(R.id.btn_eliminar_pedido);
+        btnEliminar2 = findViewById(R.id.btn_eliminar_pedido2);
+        btnEliminar3 = findViewById(R.id.btn_eliminar_pedido3);
+        btnEliminar4 = findViewById(R.id.btn_eliminar_pedido4);
+        btnEliminar5 = findViewById(R.id.btn_eliminar_pedido5);
+        btnEliminar6 = findViewById(R.id.btn_eliminar_pedido6);
+        btnEliminar7 = findViewById(R.id.btn_eliminar_pedido7);
+        btnEliminar8 = findViewById(R.id.btn_eliminar_pedido8);
+
+
 
         Intent intent = getIntent();
         nombre = intent.getStringExtra("nombre");
@@ -113,7 +137,10 @@ public class Cesta extends AppCompatActivity {
 
         }
 
+
         //introducimos los valores de los pedidos en la cesta
+
+
         for (int i = 0;i<contador;i++){
 
 
@@ -121,93 +148,208 @@ public class Cesta extends AppCompatActivity {
 
                 txtNombrePrimerPLato.setText(nombrePedidos.get(i));
                 txtPrecioprimerPlato.setText(precioPedidos.get(i) + " €");
+                double precio=precioPedidos.get(i);
                 precioFinal = precioFinal + precioPedidos.get(i); //el valor del double en otra variable para hacer la suma sonstante de los rpecios
                 Log.i("precioFinal", String.valueOf(precioFinal));
+                btnEliminar1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        txtNombrePrimerPLato.setText("");
+                        txtPrecioprimerPlato.setText("");
+                        eliminar(1);
+                        precioFinal = precioFinal - precio;
+                        precioConvertido();
+                        contador--;
+
+                    }
+                });
             }
             else if(i==1){
 
                 txtNombreSegundoPLato.setText(nombrePedidos.get(i));
                 txtPrecioSegundoPlato.setText(precioPedidos.get(i) + " €");
+                double precio=precioPedidos.get(i);
                 precioFinal = precioFinal + precioPedidos.get(i);
                 Log.i("precioFinal", String.valueOf(precioFinal));
+                btnEliminar2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        //vaciamos los campos
+                        txtNombreSegundoPLato.setText("");
+                        txtPrecioSegundoPlato.setText("");
+
+                        //eliminamos de la lista el nombre y precio que se desse
+                        eliminar(2);
+
+                        //restamos al precio el precio que costaba el plato que se ha eliminado
+                        precioFinal = precioFinal - precio;
+
+                        //recargams el txt del precio y se vuelve a calcular el tiempo
+                        precioConvertido();
+                        
+                        //reducimos el valor para que a la hora de subir los pedidos a la nube se sepa que debe recorrer un espacio menos en la
+                        //lista ya que estara vacio al haberlo borrado
+                        contador--;
+
+                    }
+                });
             }
             else if(i==2){
 
                 txtNombretercerPLato.setText(nombrePedidos.get(i));
                 txtPrecioTercerPlato.setText(precioPedidos.get(i) + " €");
+                double precio=precioPedidos.get(i);
                 precioFinal = precioFinal + precioPedidos.get(i);
                 Log.i("precioFinal", String.valueOf(precioFinal));
+                btnEliminar3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        txtNombretercerPLato.setText("");
+                        txtPrecioTercerPlato.setText("");
+                        eliminar(3);
+                        precioFinal = precioFinal - precio;
+                        precioConvertido();
+                        contador--;
+
+                    }
+                });
             }
             else if(i==3){
 
                 txtNombreCuartoPLato.setText(nombrePedidos.get(i));
                 txtPrecioCuartoPlato.setText(precioPedidos.get(i) + " €");
+                double precio=precioPedidos.get(i);
                 precioFinal = precioFinal + precioPedidos.get(i);
                 Log.i("precioFinal", String.valueOf(precioFinal));
+                btnEliminar4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        txtNombreCuartoPLato.setText("");
+                        txtPrecioCuartoPlato.setText("");
+                        eliminar(4);
+                        precioFinal = precioFinal - precio;
+                        precioConvertido();
+                        contador--;
+
+                    }
+                });
             }
             else if(i==4){
 
                 txtNombreQuintoPLato.setText(nombrePedidos.get(i));
                 txtPrecioQuintoPlato.setText(precioPedidos.get(i) + " €");
+                double precio=precioPedidos.get(i);
                 precioFinal = precioFinal + precioPedidos.get(i);
                 Log.i("precioFinal", String.valueOf(precioFinal));
+                btnEliminar5.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        txtNombreQuintoPLato.setText("");
+                        txtPrecioQuintoPlato.setText("");
+                        eliminar(5);
+                        precioFinal = precioFinal - precio;
+                        precioConvertido();
+                        contador--;
+
+                    }
+                });
             }
             else if(i==5){
 
                 txtNombreSextoPLato.setText(nombrePedidos.get(i));
                 txtPrecioSextoPlato.setText(precioPedidos.get(i) + " €");
+                double precio=precioPedidos.get(i);
                 precioFinal = precioFinal + precioPedidos.get(i);
                 Log.i("precioFinal", String.valueOf(precioFinal));
+                btnEliminar6.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        txtNombreSextoPLato.setText("");
+                        txtPrecioSextoPlato.setText("");
+                        eliminar(6);
+                        precioFinal = precioFinal - precio;
+                        precioConvertido();
+                        contador--;
+
+                    }
+                });
             }
             else if(i==6){
 
                 txtNombreSeptimoPLato.setText(nombrePedidos.get(i));
                 txtPrecioSeptimoPlato.setText(precioPedidos.get(i) + " €");
+                double precio=precioPedidos.get(i);
                 precioFinal = precioFinal + precioPedidos.get(i);
                 Log.i("precioFinal", String.valueOf(precioFinal));
+                btnEliminar7.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        txtNombreSeptimoPLato.setText("");
+                        txtPrecioSeptimoPlato.setText("");
+                        eliminar(7);
+                        precioFinal = precioFinal - precio;
+                        precioConvertido();
+                        contador--;
+
+                    }
+                });
             }
             else if(i==7){
 
                 txtNombreOctavoPLato.setText(nombrePedidos.get(i));
                 txtPrecioOctavoPlato.setText(precioPedidos.get(i) + " €");
+                double precio=precioPedidos.get(i);
                 precioFinal = precioFinal + precioPedidos.get(i);
                 Log.i("precioFinal", String.valueOf(precioFinal));
+                btnEliminar8.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        txtNombreOctavoPLato.setText("");
+                        txtPrecioOctavoPlato.setText("");
+                        eliminar(8);
+                        precioFinal = precioFinal - precio;
+                        precioConvertido();
+                        contador--;
+
+                    }
+                });
             }
 
         }
-        //suma de todos los precios
-        Log.i("precio total", String.valueOf(precioFinal));
-        DecimalFormat formato = new DecimalFormat("#.00");
 
-        //pasamos el double a string para sustituir el punto por la coma
-        precioString = String.valueOf(formato.format(precioFinal));
-        Log.i("precio sin cambiar",precioString);
+        precioConvertido();
 
-        precioString = precioString.replace(".",",");
-        Log.i("precio cambiado",precioString);
-
-        //añadir el precio al txt para visualizarlo
-        precioTotal.setText(precioString + " €");
-
-
-        //calculamos el tiempo que se tarda el pedido en repartir
-        tiempo=calcularTiempoPedido(Double.parseDouble(formato.format(precioFinal)));
-        Log.i("tiempo", String.valueOf(tiempo));
-
-         builder = new AlertDialog.Builder(this);
+        builder = new AlertDialog.Builder(this);
 
         //boton para finalizar el pedido
         btnFinalizarCompra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                Log.i("contador", String.valueOf(contador));
+                Log.i("pedidos", String.valueOf(nombrePedidos));
+                Log.i("pedidos", String.valueOf(precioPedidos));
+
                 //subimos los pedidos a la base de datos
                 finalizarPedido(nombrePedidos,precioPedidos,contador);
 
                 //llamamos al metodo para crear la alerta que avisa del tiempo
                 crearAlerta(builder,tiempo);
+
             }
         });
+
+
+        //OnbackPressed
+
+        imgOnBackPressed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        //eliminar pedido1
 
     }
 
@@ -244,7 +386,8 @@ public class Cesta extends AppCompatActivity {
         int tiempo = 0;
 
         //del precio final lo dividimos entre 4,5
-        tiempo = (int) (precioFinal%4.5);
+        tiempo = (int) (precioFinal/4.5);
+        Log.i("resto", String.valueOf(tiempo));
 
         //por cada plato le ponemos 9 minutos;
         tiempo = tiempo*9;
@@ -270,6 +413,76 @@ public class Cesta extends AppCompatActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    public void reload(){
+        finish();
+        overridePendingTransition(0, 0);
+        startActivity(getIntent());
+        overridePendingTransition(0, 0);
+    }
+
+    public void eliminar(int pedidoParaEliminar){
+
+        if (pedidoParaEliminar==1){
+            nombrePedidos.remove(0);
+            precioPedidos.remove(0);
+        }
+        else if (pedidoParaEliminar==2){
+            nombrePedidos.remove(1);
+            precioPedidos.remove(1);
+        }
+        else if (pedidoParaEliminar==3){
+            nombrePedidos.remove(2);
+            precioPedidos.remove(2);
+        }
+        else if (pedidoParaEliminar==4){
+            nombrePedidos.remove(3);
+            precioPedidos.remove(3);
+        }
+        else if (pedidoParaEliminar==5){
+            nombrePedidos.remove(4);
+            precioPedidos.remove(4);
+        }else if (pedidoParaEliminar==6){
+            nombrePedidos.remove(5);
+            precioPedidos.remove(5);
+        }else if (pedidoParaEliminar==7){
+            nombrePedidos.remove(6);
+            precioPedidos.remove(6);
+        }else if (pedidoParaEliminar==8){
+            nombrePedidos.remove(7);
+            precioPedidos.remove(7);
+        }
+        else{
+
+        }
+
+    }
+
+    public void precioConvertido(){
+        //suma de todos los precios
+        Log.i("precio total", String.valueOf(precioFinal));
+        DecimalFormat formato = new DecimalFormat("#.00");
+
+        //pasamos el double a string para sustituir el punto por la coma
+        precioString = String.valueOf(formato.format(precioFinal));
+        Log.i("precio sin cambiar", precioString);
+
+        precioString = precioString.replace(".", ",");
+        Log.i("precio cambiado", precioString);
+
+        //añadir el precio al txt para visualizarlo
+        precioTotal.setText(precioString + " €");
+
+        //calculamos el tiempo que se tarda el pedido en repartir
+        tiempo = calcularTiempoPedido(Double.parseDouble(formato.format(precioFinal)));
+        Log.i("tiempo", String.valueOf(tiempo));
 
     }
 }

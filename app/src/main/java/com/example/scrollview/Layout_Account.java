@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -43,6 +44,7 @@ public class Layout_Account extends AppCompatActivity {
     private EditText etxtUsuario;
     private EditText etxtContraseña;
     private Button btnCambiarCreedenciales;
+    private ImageView imgOnbackPressed;
 
     Registro registro = new Registro();
 
@@ -57,6 +59,7 @@ public class Layout_Account extends AppCompatActivity {
         etxtUsuario = findViewById(R.id.etxt_usuario_config);
         etxtContraseña = findViewById(R.id.etxt_contraseña_congif);
         btnCambiarCreedenciales = findViewById(R.id.btn_cambiar_creedenciales);
+        imgOnbackPressed = findViewById(R.id.img_back_pressed);
 
         //obtenemos los valores del usuario
         Intent intent = getIntent();
@@ -71,6 +74,12 @@ public class Layout_Account extends AppCompatActivity {
         etxtUsuario.addTextChangedListener(textWatcher);
         etxtContraseña.addTextChangedListener(textWatcher);
 
+        imgOnbackPressed.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
 
     }
 
@@ -217,6 +226,12 @@ public class Layout_Account extends AppCompatActivity {
 
         creedenciales = datos.getString("creedenciales",null);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        super.onBackPressed();
     }
 
 }
