@@ -65,104 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //Cada uno de los restaurantes ( lo que se ve en la app)
 
-                if (position==0){
-                    restauranteElegido = 1;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    //pasamos estos datos para el onBackPressed
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    //para que se vea el nombre de cada restaurante enviamos el dato
-                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
-                    startActivity(intent1);
-
-                }
-                else if (position==1){
-                    restauranteElegido = 2;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
-                    startActivity(intent1);
-                }
-                else if (position==2){
-                    restauranteElegido = 3;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
-                    startActivity(intent1);
-                }
-                else if (position==3){
-                    restauranteElegido = 4;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
-                    startActivity(intent1);
-                }
-                else if (position==4){
-                    restauranteElegido = 5;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
-
-                    startActivity(intent1);
-                }
-                else if (position==5){
-                    restauranteElegido = 6;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
-
-                    startActivity(intent1);
-                }
-                else if (position==6){
-                    restauranteElegido = 7;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
-
-                    startActivity(intent1);
-                }
-                else if (position==7){
-                    restauranteElegido = 8;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    startActivity(intent1);
-                }
-                else if (position==8){
-                    restauranteElegido = 9;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
-
-                    startActivity(intent1);
-                }
-                else if (position==9){
-                    restauranteElegido = 10;
-                    Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
-                    intent1.putExtra("restauranteElegido",restauranteElegido);
-                    intent1.putExtra("nombre",nombre);
-                    intent1.putExtra("contra",contraseña);
-                    intent1.putExtra("restaurante",restaurantesList.get(0).getName());
-
-                    startActivity(intent1);
-
-                }
+                rellenarRestaurantes(position);
 
             }
 
@@ -227,6 +130,109 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(manager );
 
 
+
+    }
+    //metodo que introduce toda la informacion de los restaurantes y lleva a su correspondiente menu
+    public void rellenarRestaurantes(int position){
+
+        if (position==0){
+            restauranteElegido = 1;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            //pasamos estos datos para el onBackPressed
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            //para que se vea el nombre de cada restaurante enviamos el dato
+            intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+            startActivity(intent1);
+
+        }
+        else if (position==1){
+            restauranteElegido = 2;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+            startActivity(intent1);
+        }
+        else if (position==2){
+            restauranteElegido = 3;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+            startActivity(intent1);
+        }
+        else if (position==3){
+            restauranteElegido = 4;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+            startActivity(intent1);
+        }
+        else if (position==4){
+            restauranteElegido = 5;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
+            startActivity(intent1);
+        }
+        else if (position==5){
+            restauranteElegido = 6;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
+            startActivity(intent1);
+        }
+        else if (position==6){
+            restauranteElegido = 7;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
+            startActivity(intent1);
+        }
+        else if (position==7){
+            restauranteElegido = 8;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            startActivity(intent1);
+        }
+        else if (position==8){
+            restauranteElegido = 9;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
+            startActivity(intent1);
+        }
+        else if (position==9){
+            restauranteElegido = 10;
+            Intent intent1 = new Intent(MainActivity.this,Activity2_platos.class);
+            intent1.putExtra("restauranteElegido",restauranteElegido);
+            intent1.putExtra("nombre",nombre);
+            intent1.putExtra("contra",contraseña);
+            intent1.putExtra("restaurante",restaurantesList.get(0).getName());
+
+            startActivity(intent1);
+
+        }
 
     }
 
