@@ -103,6 +103,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/account_box"
+                        android:visibility="invisible"
                         app:srcCompat="@android:drawable/btn_dialog" />
                 </LinearLayout>
 
@@ -147,6 +148,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/account_box"
+                        android:visibility="invisible"
                         app:srcCompat="@android:drawable/btn_dialog" />
                 </LinearLayout>
 
@@ -190,6 +192,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/account_box"
+                        android:visibility="invisible"
                         app:srcCompat="@android:drawable/btn_dialog" />
                 </LinearLayout>
 
@@ -233,6 +236,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/account_box"
+                        android:visibility="invisible"
                         app:srcCompat="@android:drawable/btn_dialog" />
 
                 </LinearLayout>
@@ -276,6 +280,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/account_box"
+                        android:visibility="invisible"
                         app:srcCompat="@android:drawable/btn_dialog" />
                 </LinearLayout>
 
@@ -318,6 +323,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/account_box"
+                        android:visibility="invisible"
                         app:srcCompat="@android:drawable/btn_dialog" />
                 </LinearLayout>
 
@@ -360,6 +366,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/account_box"
+                        android:visibility="invisible"
                         app:srcCompat="@android:drawable/btn_dialog" />
                 </LinearLayout>
 
@@ -402,6 +409,7 @@
                         android:layout_gravity="center_vertical"
                         android:layout_weight="1"
                         android:background="@drawable/account_box"
+                        android:visibility="invisible"
                         app:srcCompat="@android:drawable/btn_dialog" />
                 </LinearLayout>
 

@@ -140,14 +140,16 @@ public class Cesta extends AppCompatActivity {
 
         //introducimos los valores de los pedidos en la cesta
 
+        //mostrar botones de eliminar
+        mostrarBonotesElmiinar(contador);
 
         for (int i = 0;i<contador;i++){
-
 
             if (i==0){
 
                 txtNombrePrimerPLato.setText(nombrePedidos.get(i));
                 txtPrecioprimerPlato.setText(precioPedidos.get(i) + " €");
+                //variable donde se almacena el precio del plato por si hay que eliminar ese pedido
                 double precio=precioPedidos.get(i);
                 precioFinal = precioFinal + precioPedidos.get(i); //el valor del double en otra variable para hacer la suma sonstante de los rpecios
                 Log.i("precioFinal", String.valueOf(precioFinal));
@@ -160,6 +162,7 @@ public class Cesta extends AppCompatActivity {
                         precioFinal = precioFinal - precio;
                         precioConvertido();
                         contador--;
+                        btnEliminar1.setVisibility(View.INVISIBLE);
 
                     }
                 });
@@ -186,10 +189,11 @@ public class Cesta extends AppCompatActivity {
 
                         //recargams el txt del precio y se vuelve a calcular el tiempo
                         precioConvertido();
-                        
+
                         //reducimos el valor para que a la hora de subir los pedidos a la nube se sepa que debe recorrer un espacio menos en la
                         //lista ya que estara vacio al haberlo borrado
                         contador--;
+                        btnEliminar2.setVisibility(View.INVISIBLE);
 
                     }
                 });
@@ -210,6 +214,8 @@ public class Cesta extends AppCompatActivity {
                         precioFinal = precioFinal - precio;
                         precioConvertido();
                         contador--;
+                        btnEliminar3.setVisibility(View.INVISIBLE);
+
 
                     }
                 });
@@ -230,6 +236,8 @@ public class Cesta extends AppCompatActivity {
                         precioFinal = precioFinal - precio;
                         precioConvertido();
                         contador--;
+                        btnEliminar4.setVisibility(View.INVISIBLE);
+
 
                     }
                 });
@@ -250,6 +258,8 @@ public class Cesta extends AppCompatActivity {
                         precioFinal = precioFinal - precio;
                         precioConvertido();
                         contador--;
+                        btnEliminar5.setVisibility(View.INVISIBLE);
+
 
                     }
                 });
@@ -270,6 +280,8 @@ public class Cesta extends AppCompatActivity {
                         precioFinal = precioFinal - precio;
                         precioConvertido();
                         contador--;
+                        btnEliminar6.setVisibility(View.INVISIBLE);
+
 
                     }
                 });
@@ -290,6 +302,8 @@ public class Cesta extends AppCompatActivity {
                         precioFinal = precioFinal - precio;
                         precioConvertido();
                         contador--;
+                        btnEliminar7.setVisibility(View.INVISIBLE);
+
 
                     }
                 });
@@ -310,6 +324,8 @@ public class Cesta extends AppCompatActivity {
                         precioFinal = precioFinal - precio;
                         precioConvertido();
                         contador--;
+                        btnEliminar8.setVisibility(View.INVISIBLE);
+
 
                     }
                 });
@@ -463,6 +479,37 @@ public class Cesta extends AppCompatActivity {
 
         }
 
+    }
+    //metodo que hace que donde se haya añadido un pedido haga visible el boton
+    public void mostrarBonotesElmiinar(int contador){
+        for (int i = 0 ;i<contador;i++){
+
+            if(i==0){
+                btnEliminar1.setVisibility(View.VISIBLE);
+            }
+            else if(i==1){
+                btnEliminar2.setVisibility(View.VISIBLE);
+            }
+            else if(i==2){
+                btnEliminar3.setVisibility(View.VISIBLE);
+            }
+            else if(i==3){
+                btnEliminar4.setVisibility(View.VISIBLE);
+            }
+            else if(i==4){
+                btnEliminar5.setVisibility(View.VISIBLE);
+            }
+            else if(i==5){
+                btnEliminar6.setVisibility(View.VISIBLE);
+            }
+            else if(i==6){
+                btnEliminar7.setVisibility(View.VISIBLE);
+            }
+            else if(i==7){
+                btnEliminar8.setVisibility(View.VISIBLE);
+            }
+
+        }
     }
 
     public void precioConvertido(){
