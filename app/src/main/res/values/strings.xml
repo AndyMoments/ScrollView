@@ -24,6 +24,8 @@
     <string name="txt_comprar">Comprar: </string>
     <string name="txt_cantidad">Cantidad:</string>
     <string name="txt_usuario">Usuario</string>
+    <string name="txt_envio">Envío </string>
+
 
 
 </resources>

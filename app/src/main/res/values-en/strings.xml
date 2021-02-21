@@ -25,4 +25,6 @@
     <string name="txt_micuenta">My account</string>
     <string name="btn_registro">Sign up</string>
     <string name="txt_contraseña">Password</string>
+    <string name="txt_envio">Shipping </string>
+
 </resources>
