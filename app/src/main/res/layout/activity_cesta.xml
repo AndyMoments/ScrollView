@@ -46,7 +46,7 @@
                 android:layout_marginBottom="50px"
                 android:fontFamily="@font/abril_fatface"
                 android:gravity="bottom|center_vertical"
-                android:text="TU PEDIDO"
+                android:text="@string/txt_pedido"
                 android:textColor="@color/white"
                 android:textSize="50dp" />
 
@@ -430,7 +430,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/abril_fatface"
-                android:text="Precio total:"
+                android:text="@string/txt_precio"
                 android:textSize="28sp" />
 
             <TextView
@@ -445,9 +445,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Comprar"
-                android:textSize="17sp"
                 android:fontFamily="@font/abril_fatface"
+                android:text="@string/txt_comprar"
+                android:textSize="17sp"
                 app:backgroundTint="@color/orange" />
         </LinearLayout>
 

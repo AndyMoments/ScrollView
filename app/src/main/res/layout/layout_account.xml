@@ -26,16 +26,16 @@
 
     <TextView
         android:id="@+id/restaurant_name"
-        android:fontFamily="@font/abril_fatface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:textSize="@dimen/_30sdp"
-        android:text="Mi cuenta"
         android:layout_marginTop="@dimen/_15sdp"
         android:layout_toRightOf="@+id/img_back_pressed"
+        android:fontFamily="@font/abril_fatface"
         android:shadowColor="@color/gray_d"
-        android:shadowRadius="10"/>
+        android:shadowRadius="10"
+        android:text="@string/txt_micuenta"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_30sdp" />
 
 
     <ImageButton
@@ -72,16 +72,16 @@
 
         <TextView
             android:id="@+id/txt_Username"
-            android:fontFamily="@font/abril_fatface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60px"
+            android:fontFamily="@font/abril_fatface"
             android:paddingLeft="60px"
-            android:text="Usuario:"
-            android:textColor="@color/white"
-            android:textSize="22sp"
             android:shadowColor="@color/gray_d"
-            android:shadowRadius="10"/>
+            android:shadowRadius="10"
+            android:text="@string/txt_usuario"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
 
         <EditText
             android:id="@+id/etxt_usuario_config"
@@ -98,16 +98,16 @@
 
         <TextView
             android:id="@+id/txt_contraseña"
-            android:fontFamily="@font/abril_fatface"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="60px"
+            android:fontFamily="@font/abril_fatface"
             android:paddingLeft="60px"
-            android:text="Contraseña:"
-            android:textColor="@color/white"
-            android:textSize="22sp"
             android:shadowColor="@color/gray_d"
-            android:shadowRadius="10"/>
+            android:shadowRadius="10"
+            android:text="@string/txt_contraseña"
+            android:textColor="@color/white"
+            android:textSize="22sp" />
 
         <EditText
             android:id="@+id/etxt_contraseña_congif"
@@ -124,14 +124,14 @@
 
         <Button
             android:id="@+id/btn_cambiar_creedenciales"
-            android:fontFamily="@font/abril_fatface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="100px"
             android:enabled="false"
-            android:text="Cambiar creedenciales"
-            android:textColor="@color/white"
+            android:fontFamily="@font/abril_fatface"
+            android:text="@string/btn_creedenciales"
+            android:textColor="@color/mirage"
             android:textSize="17sp"
             app:backgroundTint="@color/orange"
             app:rippleColor="#1C1A1A" />

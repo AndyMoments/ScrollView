@@ -11,4 +11,19 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
+
+    <string name="txt_contraseña">Contraseña</string>
+    <string name="btn_registro">Registrar Usuario</string>
+    <string name="txt_micuenta">Mi cuenta</string>
+    <string name="btn_creedenciales">Cambiar creedenciales</string>
+    <string name="txt_restaurante">Restaurante</string>
+    <string name="txt_informacion">Cargando información</string>
+    <string name="txt_bienvenido">Bienvenido</string>
+    <string name="txt_pedido">TU PEDIDO</string>
+    <string name="txt_precio">Precio total:</string>
+    <string name="txt_comprar">Comprar: </string>
+    <string name="txt_cantidad">Cantidad:</string>
+    <string name="txt_usuario">Usuario</string>
+
+
 </resources>

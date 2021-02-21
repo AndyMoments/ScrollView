@@ -99,7 +99,7 @@ public class Activity2_platos extends AppCompatActivity {
             popularFoodList.add(new PopularFood("Bocadillo British Bacon", "5,80 €", R.drawable.pansbocata));
             popularFoodList.add(new PopularFood("Bocadillo Serrano Brie", "6,70 €", R.drawable.pansbocata));
             popularFoodList.add(new PopularFood("Bocadillo Vegetal de Atún", "6,95 €", R.drawable.pansbocata));
-            popularFoodList.add(new PopularFood("Bocadillo Pechuga de Polloe", "6,80 €", R.drawable.pansbocata));
+            popularFoodList.add(new PopularFood("Bocadillo Pechuga de Pollo", "6,80 €", R.drawable.pansbocata));
         }
         else if(restaurantElegido==6) {
             popularFoodList.add(new PopularFood("Hamburguesa VIPS Burger", "12,50 €", R.drawable.vipsburger));

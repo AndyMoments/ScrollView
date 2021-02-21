@@ -19,17 +19,18 @@
             android:layout_height="match_parent"
             android:layout_marginTop="@dimen/_70sdp"
             android:background="@drawable/rectangle_stroke">
+
             <TextView
                 android:id="@+id/tv_name"
-                android:fontFamily="@font/abril_fatface"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_85sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:ellipsize="end"
+                android:fontFamily="@font/abril_fatface"
                 android:maxLines="1"
-                android:text="Restaurante"
+                android:text="@string/txt_restaurante"
                 android:textColor="@color/white"
                 android:textSize="@dimen/_25sdp" />
 

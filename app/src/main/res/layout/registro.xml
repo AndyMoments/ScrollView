@@ -64,7 +64,7 @@
             android:layout_height="386dp"
             android:layout_marginStart="80px"
             android:layout_marginLeft="80px"
-            android:layout_marginTop="100px"
+            android:layout_marginTop="60px"
             android:layout_marginEnd="80px"
             android:layout_marginRight="80px"
             android:orientation="vertical">
@@ -75,11 +75,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60px"
                 android:paddingLeft="60px"
-                android:text="Usuario:"
-                android:textColor="@color/white"
-                android:textSize="22sp"
                 android:shadowColor="@color/gray_d"
-                android:shadowRadius="10"/>
+                android:shadowRadius="10"
+                android:text="@string/txt_usuario"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/etxt_usuario_config"
@@ -97,32 +97,32 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60px"
                 android:paddingLeft="60px"
-                android:text="Contraseña:"
-                android:textColor="@color/white"
-                android:textSize="22sp"
                 android:shadowColor="@color/gray_d"
-                android:shadowRadius="10"/>
+                android:shadowRadius="10"
+                android:text="@string/txt_contraseña"
+                android:textColor="@color/white"
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/etxt_contraseña_congif"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="60px"
+                android:background="@drawable/account_box"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:paddingLeft="60px"
-                android:background="@drawable/account_box" />
+                android:paddingLeft="60px" />
 
             <Button
                 android:id="@+id/btn_cambiar_creedenciales"
-                android:textColor="@color/white"
-                app:backgroundTint="@color/orange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="100px"
+                android:text="@string/btn_registro"
+                android:textColor="@color/white"
                 android:textSize="17sp"
-                android:text="Crear Usuario" />
+                app:backgroundTint="@color/orange" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

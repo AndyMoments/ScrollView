@@ -21,15 +21,15 @@
 
         <TextView
             android:id="@+id/textView"
-            android:fontFamily="@font/abril_fatface"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:fontFamily="@font/abril_fatface"
             android:gravity="center"
-            android:text="Cargando información"
-            android:textColor="#FFFAFA"
-            android:textSize="36sp"
             android:shadowColor="@color/gray_d"
-            android:shadowRadius="10"/>
+            android:shadowRadius="10"
+            android:text="@string/txt_informacion"
+            android:textColor="#FFFAFA"
+            android:textSize="36sp" />
 
         <ProgressBar
             android:id="@+id/progesion"
